@@ -7,6 +7,18 @@ if (isset($_SESSION['add'])) //checking if the session is set or not
     echo $_SESSION['add']; //addding sessiong message 
     unset($_SESSION['add']); //removing session message 
 }
+if (isset($_SESSION['del'])) //checking if the session is set or not 
+{
+
+    echo $_SESSION['del']; //addding sessiong message 
+    unset($_SESSION['del']); //removing session message 
+}
+if (isset($_SESSION['delete'])) //checking if the session is set or not 
+{
+
+    echo $_SESSION['delete']; //addding sessiong message 
+    unset($_SESSION['delete']); //removing session message 
+}
 ?>
 
 <div class="my-10">
@@ -47,7 +59,7 @@ if (isset($_SESSION['add'])) //checking if the session is set or not
                             <td class="p-6 border"><?php echo htmlspecialchars($fullname); ?></td>
                             <td class="p-6 border "><?php echo htmlspecialchars($username); ?></td>
                             <td class="p-2 border"><a class="  p-5  rounded-xl  bg-project-bg-2 hover:bg-blue-900 text-font-color" href="add-admin.php"> Change Password</a></td>
-                            <td class="p-2 border"><a class="  p-5 rounded-xl  bg-green-300 hover:bg-green-600 text-font-color" href="add-admin.php"> Update Admin </a></td>
+                            <td class="p-2 border"><a class="  p-5 rounded-xl  bg-green-300 hover:bg-green-600 text-font-color" href="update-admin.php?id<?php echo $id ?>"> Update Admin </a></td>
                             <td class="p-2 border"><a class="  p-5  rounded-xl  bg-red-300 hover:bg-red-600 text-font-color" href="delete_admin.php?id=<?php echo $id ?>"> Delete Admin </a></td>
                         </tr>
                     </tbody>
