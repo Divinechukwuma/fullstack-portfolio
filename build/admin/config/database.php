@@ -3,7 +3,7 @@
 
   //this is a way to write manageable code 
     //create constants to store non repeating values
-    define('SITEURL','C:/xampp/htdocs/webapps/fullstack-portfolio/build/admin/');
+    // define('SITEURL','build/admin/');
     define('DB_HOST', 'localhost');
     define('DB_USERNAME', 'divine-store');
     define('DB_PASSWORD', 'CHUKS989');
