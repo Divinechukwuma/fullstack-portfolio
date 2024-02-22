@@ -4,7 +4,7 @@
     <a class="  p-6  rounded-xl  bg-project-bg-2 hover:bg-blue-900 text-font-color m-10" href="add-admin.php"> Add Admin </a>
 
     <div class="m-10">
-        <table class="table-fixed ">
+        <table class="table-fixed  ">
             <thead>
                 <tr class="text-4xl">
                     <th class="p-10">S.N</th>
@@ -13,7 +13,7 @@
                     <th>Actions</th>
                 </tr>
             </thead><br><br>
-            <tbody class="text-xl border-t border-gray-300">
+            <tbody class="text-xl border-t-0 border-gray-300">
                 <tr class="text-xl ">
                     <td class="p-">1</td>
                     <td>Full-name</td>
