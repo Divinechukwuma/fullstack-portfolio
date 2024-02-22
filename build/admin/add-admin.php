@@ -2,14 +2,6 @@
 
 <div class="max-w-8xl">
     <h1 class=" text-4xl ml-10 font-extrabold">Add Admin</h1><br><br>
-    <?php
-    if (isset($_SESSION['add'])) //checking if the session is set or not 
-    {
-
-        echo $_SESSION['add']; //addding sessiong message 
-        unset($_SESSION['add']); //removing session message 
-    }
-    ?>
 
     <form action="" method="POST">
         <table class="w-[30%] ml-20">
