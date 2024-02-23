@@ -5,10 +5,7 @@
       $id = $_GET['id'];
  }
 
- if(isset($_SESSION['pass'])){
-    echo $_SESSION['pass'];
-    unset($_SESSION['pass']);
- }
+
 
  if(isset($_SESSION['new'])){
     echo $_SESSION['new'];
@@ -18,7 +15,7 @@
 
 
 <div class="max-w-8xl">
-    <h1 class=" text-4xl ml-10 font-extrabold">Add Admin</h1><br><br>
+    <h1 class=" text-4xl ml-10 font-extrabold">Change Password</h1><br><br>
 
     <form action="" method="POST">
         <table class="w-[30%] ml-20">
@@ -40,7 +37,7 @@
             <tr>
                 <td>
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <input type="submit" name="submit" value="Update Paaword" class="bg-project-bg-2 p-4 rounded-xl mt-3 hover:bg-blue-900 text-white">
+                    <input type="submit" name="submit" value="Update Password" class="bg-project-bg-2 p-4 rounded-xl mt-3 hover:bg-blue-900 text-white">
                 </td>
             </tr>
 
@@ -68,7 +65,7 @@ if(isset($_POST['submit'])){
      //ERROR HANDLING TO MAKE SURE THAT ALL INPUT MUST BE Filled
 
      if(empty($new_password) || empty($confirm_password)){
-        $_SESSION['pass'] = "<div class='text-red-500 uppercase'>All input must be filled </div>";
+        $_SESSION['new'] = "<div class='text-red-500 uppercase'>All input must be filled </div>";
         //redirect
         header("location:update-password.php");
         exit();
@@ -118,7 +115,7 @@ if(isset($_POST['submit'])){
 
          if($stmt->affected_rows > 0){
             //password updated successfully 
-            $_SESSION['new'] = "<div class='text-green-500 uppercase'>password updated successfully";
+            $_SESSION['pass'] = "<div class='text-green-500 uppercase'>password updated successfully";
             //Redirect 
             header("location: manage-admin.php");
          }else{
