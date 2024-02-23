@@ -21,8 +21,10 @@
             <nav class="hidden md:block space-x-3 text-xl">
           <a href="index.php" class="text-font-color hover:text-font-color-hover font-sans font-medium">Dashboard</a>
           <a href="manage-admin.php" class="text-font-color hover:text-font-color-hover sans font-medium">Admin</a>
+          <a href="manage-products.php" class="text-font-color hover:text-font-color-hover font-sans font-medium">Products</a>
           <a href="#place" class="text-font-color hover:text-font-color-hover font-sans font-medium">Category</a>
-          <a href="#place" class="text-font-color hover:text-font-color-hover font-sans font-medium">Products</a>
+          <a href="#place" class="text-font-color hover:text-font-color-hover font-sans font-medium">Order</a>
+          <a href="#place" class="text-font-color hover:text-font-color-hover font-sans font-medium">Contact Us </a>
         </nav>
         </section>
     </header>
