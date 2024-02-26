@@ -11,7 +11,7 @@
 
     ?>
 
-    <form action="" method="POST">
+    <form action="" enctype="multipart/form-data" method="POST">
         <table class="w-[30%] ml-20">
 
             <tr>
@@ -132,7 +132,7 @@ if (isset($_POST['submit'])) {
                 //Move uploaded files to non-web accessible directory
 
                 $src =  $_FILES['image']['tmp_name'];
-                $dst = "/admin/image" . $imageName;
+                $dst = "./images/goods" . $imageName;
 
                 $Upload = move_uploaded_file($src, $dst);
 
@@ -150,17 +150,18 @@ if (isset($_POST['submit'])) {
     }
 
 
- 
+
 
     //sql query to insert the data into the data base
     $sql = "INSERT INTO tbl_products (title,price,description,imageName,featured,active) VALUES(?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sdssss',$title,$price,$description,$imageName,$featured,$active);
+    $stmt->bind_param('sdssss', $title, $price, $description, $imageName, $featured, $active);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
         // Data inserted
         $_SESSION['add'] = "<div class='text-green-500 uppercase'>Product Added successfully.</div>";
+
         header("location: manage-products.php");
     } else {
         // Failed to insert data
