@@ -1,9 +1,18 @@
 <?php include '../admin/partials/header.php'; ?><br><br>
 
+<?php
+    if (isset($_SESSION['add'])) {
+        echo $_SESSION['add'];
+        unset($_SESSION['add']);
+    }
+
+    ?>
+
 
 <div class="my-10">
     <a class="  p-6  rounded-xl  bg-project-bg-2 hover:bg-blue-900 text-font-color m-10" href="add-products.php"> Add Products</a>
 
+    
     <div class="m-10 pb-5">
         <table>
             <thead>
@@ -11,7 +20,7 @@
                     <th class="p-6">S.N</th>
                     <th class="p-6">Title</th>
                     <th class="p-6">Discription</th>
-                    <th class="p-6">Prices</th>
+                    <th class="p-6">$Prices</th>
                     <th class="p-6">Image-Name</th>
                     <th class="p-6">Feature</th>
                     <th class="p-6">Active</th>

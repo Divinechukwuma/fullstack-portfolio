@@ -809,6 +809,11 @@ video {
   color: rgb(215 215 217 / var(--tw-text-opacity));
 }
 
+.active\:bg-red-500:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:block {
     display: block;
