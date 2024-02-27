@@ -24,10 +24,11 @@ if (isset($_GET['id'])) {
         header("location:manage-admin.php");
     }
 
-    if($_SESSION['in']){
-        echo $_SESSION['in'];
-        unset($_SESSION['in']);
-    }
+   
+}
+if( isset($_SESSION['wow'])){
+    echo $_SESSION['wow'];
+    unset($_SESSION['wow']);
 }
 
 ?>
@@ -80,7 +81,7 @@ if (isset($_POST['submit'])) {
     //error handling 
 
     if (empty($fullname) || empty($username)) {
-        $_SESSION['in'] = "<div class='text-red-500 uppercase'>all input must be filled.</div>";
+        $_SESSION['wow'] = "<div class='text-red-500 uppercase'>all input must be filled.</div>";
         //Redirect
         header("locaton:update-admin.php");
     }

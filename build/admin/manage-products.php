@@ -22,6 +22,22 @@ if (isset($_SESSION['del'])) {
     unset($_SESSION['del']);
 }
 
+if (isset($_SESSION['up'])) {
+    echo $_SESSION['up'];
+    unset($_SESSION['up']);
+}
+
+
+if (isset($_SESSION['updated'])) {
+    echo $_SESSION['updated'];
+    unset($_SESSION['updated']);
+}
+
+if (isset($_SESSION['n-u'])) {
+    echo $_SESSION['n-u'];
+    unset($_SESSION['n-u']);
+}
+
 ?>
 
 
