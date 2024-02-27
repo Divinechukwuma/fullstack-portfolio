@@ -37,21 +37,21 @@
             <tr>
                 <td>Title:</td>
                 <td>
-                    <input type="text" name="title" placeholder="Title of products" Value="<?php echo htmlspecialchars($title); ?>">
+                    <input type="text" name="title" Value="<?php echo htmlspecialchars($title); ?>">
                 </td>
             </tr>
 
             <tr>
                 <td>Description:</td>
                 <td>
-                    <textarea name="description" cols="30" rows="5" placeholder="Description of food"><?php echo htmlspecialchars($description) ?></textarea>
+                    <textarea name="description" cols="30" rows="5"><?php echo htmlspecialchars($description) ?></textarea>
                 </td>
             </tr>
 
             <tr>
                 <td>Prices:</td>
                 <td>
-                    <input type="number" name="price" placeholder="Price" value="<?php echo htmlspecialchars($price) ?>">
+                    <input type="number" name="price" value="<?php echo htmlspecialchars($price) ?>">
                 </td>
             </tr>
 
@@ -119,103 +119,103 @@
 </form>
 
 <?php
-    if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 
-        // echo 'button clicked';
-        //1.Get all the details from form
-        $id = $_POST['id'];
-        $title = $_POST['title'];
-        $price = $_POST['price'];
-        $CurrentImage = $_POST['currentImage'];
-        $featured = $_POST['featured'];
-        $active = $_POST['active'];
+    // echo 'button clicked';
+    //1.Get all the details from form
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+    $price = $_POST['price'];
+    $CurrentImage = $_POST['currentImage'];
+    $featured = $_POST['featured'];
+    $active = $_POST['active'];
 
-        //2.Upload the image if selected 
-        //Check whether  upload button is clicked or not
+    //2.Upload the image if selected 
+    //Check whether  upload button is clicked or not
 
-        if (isset($_FILES['image']['name'])) {
-            // New image name
-            //Rename the image 
-            $imageName = $_FILES['image']['name']; //New image name 
+    if (isset($_FILES['image']['name'])) {
+        // New image name
+        //Rename the image 
+        $imageName = $_FILES['image']['name']; //New image name 
 
-            //Check whether the file is available or not 
-            if ($_FILES['image'] ['name'] != "") {
+        //Check whether the file is available or not 
+        if ($imageName != "") {
 
-                //File type validation
-                $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
-                $ext = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
+            //File type validation
+            $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
+            $ext = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
 
-                if (!in_array($ext, $allowedExtensions)) {
-                    //Invalid file type
-                    //Handle accordingly (show error message)
+            if (!in_array($ext, $allowedExtensions)) {
+                //Invalid file type
+                //Handle accordingly (show error message)
 
-                    echo "Invalid file type. Allowed types: 'jpg','jpeg','png','gif','svg'";
+                echo "Invalid file type. Allowed types: 'jpg','jpeg','png','gif','svg'";
+            } else {
+
+                //Image file limit
+                $maxFileSize = 5 * 1024 * 1024; //5 mb
+
+                if ($_FILES['image']['size'] > $maxFileSize) {
+
+                    //File size exceeds the limit 
+                    //Handle accordinly show error message (REJECT UPLOAD)
+
+                    echo " File size exceeds the limit of 5 mb";
                 } else {
 
-                    //Image file limit
-                    $maxFileSize = 5 * 1024 * 1024; //5 mb
+                    //Sanitize file name
+                    $imageName = preg_replace("/[^a-zA-Z0-9.]/", "_", basename($imageName));
 
-                    if ($_FILES['image']['size'] > $maxFileSize) {
+                    //Prevent file overwriting
+                    $imageName = "divine-products" . rand(0000, 9999) . '_' . time() . '.' . $ext;
 
-                        //File size exceeds the limit 
-                        //Handle accordinly show error message (REJECT UPLOAD)
+                    //Move uploaded files to non-web accessible directory
 
-                        echo " File size exceeds the limit of 5 mb";
-                    } else {
+                    $src =  $_FILES['image']['tmp_name'];
+                    $dst = "./images/goods" . $imageName;
 
-                        //Sanitize file name
-                        $imageName = preg_replace("/[^a-zA-Z0-9.]/", "_", basename($imageName));
+                    $Upload = move_uploaded_file($src, $dst);
 
-                        //Prevent file overwriting
-                        $imageName = "divine-products" . rand(0000, 9999) . '_' . time() . '.' . $ext;
+                    //Check whether image uploded or not 
+                    if ($Upload == false) {
 
-                        //Move uploaded files to non-web accessible directory
-
-                        $src =  $_FILES['image']['tmp_name'];
-                        $dst ="./images/goods" . $imageName;
-
-                        $Upload = move_uploaded_file($src, $dst);
-
-                        //Check whether image uploded or not 
-                        if ($Upload == false) {
-
-                            //Failed to upload the image
-                            //Redirect to add food page with error message
-                            echo "failed to upload image";
-                        }
+                        //Failed to upload the image
+                        //Redirect to add food page with error message
+                        echo "failed to upload image";
                     }
                 }
-                //3.Remove the image if new image is uploaded and current image exist
-                //B.remove current image if available 
+            }
+            //3.Remove the image if new image is uploaded and current image exist
+            //B.remove current image if available 
 
-                if ($CurrentImage !== "") {
-                    //Current image is available
-                    //Remove the image 
-                    $Remove_path = "./images/goods" . $CurrentImage;
+            if ($CurrentImage !== "") {
+                //Current image is available
+                //Remove the image 
+                $Remove_path = "./images/goods" . $CurrentImage;
 
-                    $Remove = unlink($Remove_path);
+                $Remove = unlink($Remove_path);
 
-                    //Check whether the image is recovered or not
+                //Check whether the image is recovered or not
 
-                    if ($Remove == false) {
-                        //Failed to remove the images is recovered or not 
-                        $_SESSION['up'] = "<div class='text-red-500 uppercase'>Failed to remove current image.</div>";
-                        //Redirect to food page
-                        header('location:manage-products.php');
-                        //stop process
-                        die();
-                    }
+                if ($Remove == false) {
+                    //Failed to remove the images is recovered or not 
+                    $_SESSION['up'] = "<div class='text-red-500 uppercase'>Failed to remove current image.</div>";
+                    //Redirect to food page
+                    header('location:manage-products.php');
+                    //stop process
+                    die();
                 }
-            } else {
-                $imageName = $CurrentImage;
             }
         } else {
             $imageName = $CurrentImage;
         }
+    } else {
+        $imageName = $CurrentImage;
+    }
 
-        //4.Update the food in database
+    //4.Update the food in database
 
-        $sql = "UPDATE tbl_products SET 
+    $sql2 = "UPDATE tbl_products SET 
         title = ?,
         price = ?,
         imageName= ?,
@@ -223,25 +223,24 @@
         active = ?
         WHERE id = ?";
 
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sdsssi", $title, $price, $imageName, $featured, $active, $id);
-        $stmt->execute();
-        $res = $stmt->get_result();
+    $stmt2 = $conn->prepare($sql2);
+    $stmt2->bind_param("sdsssi", $title, $price, $imageName, $featured, $active, $id);
+    $stmt2->execute();
+    $res2 = $stmt2->get_result();
 
-        // Check whether the query is executed or not 
-        if ($res === true) {
-            // Query executed and menu updated 
-            $_SESSION['updated'] = "<div class='text-green-500 uppercase'>products updated successfully.</div>";
-            // Redirect
-            header('location:manage-products.php');
-        } else {
-            // Failed to update
-            $_SESSION['n-u'] = "<div class='text-red-500 uppercase'>Failed to update products.</div>";
-            // Redirect
-            header('location:manage-products.php');
-        }
+    // Check whether the query is executed or not 
+    if ($res2 === false) {
+        // Query executed and menu updated 
+        $_SESSION['updated'] = "<div class='text-green-500 uppercase'>products updated successfully.</div>";
+        // Redirect
+        header('location:manage-products.php');
+    } else {
+        // Failed to update
+        $_SESSION['n-u'] = "<div class='text-red-500 uppercase'>Failed to update products.</div>";
+        // Redirect
+        header('location:manage-products.php');
     }
-    ?>
+}
+?>
 
 <?php include('./partials/footer.php') ?>
-
