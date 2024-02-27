@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    
+<body class="min-h-screen bg-">
+    <header></header>
 </body>
 </html>
