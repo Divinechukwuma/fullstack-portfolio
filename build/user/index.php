@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DIVINE-ONLINE-SHOP</title>
+  <script src="./jquery/jquery (2).js"> </script>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="./javascript/slider.js" defer></script>
+  <!-- <script src="./javascript/slider.js" defer></script> -->
 </head>
 
 <body class="min-h-screen bg-font-color-hover">
@@ -68,23 +72,63 @@
         </section> -->
     </section>
   </header>
-  <Main class="max-w-4xl">
+  <Main class="max-w-[80%]">
     <section id="home">
+      <div class="container mx auto mt-6">
+        <div class=" responsive ">
 
-      <div class="container mx-auto mt-8">
-        <h1 class="text-2xl font-bold mb-4"></h1>
-        <div id="slider" class="relative overflow-hidden">
-          <div class="carousel-inner">
-            <!-- Images will be dynamically added here -->
-          </div>
-          <button id="prevBtn" class="prev-btn" onclick="prevSlide()">Previous</button>
-          <button id="nextBtn" class="next-btn" onclick="nextSlide()">Next</button>
+          <img src=" ./productimages/carousel images (1).jpg" alt="">
+          <img src="  ./productimages/carousel images (2).jpg" alt="">
+          <img src="./productimages/caurousel images 4.jpg" alt="">
+          <img src=" ./productimages/carousel images (1).jpg" alt="">
+          <img src="  ./productimages/carousel images (2).jpg" alt="">
+          <img src="./productimages/caurousel images 4.jpg" alt="">
+          <img src=" ./productimages/carousel images (1).jpg" alt="">
+          <img src="  ./productimages/carousel images (2).jpg" alt="">
+          <img src="./productimages/caurousel images 4.jpg" alt="">
+
         </div>
       </div>
 
     </section>
   </Main>
 
+  <script>
+    $('.responsive').slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      responsive: [{
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  </script>
 </body>
 
 </html>

@@ -5,18 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
     slider.appendChild(sliderInner);
 
     const images = [
-        {
-            URL:'../productimages/carousel images (1).jpg'
-        },
-        {
-            URL:'../productimages/carousel images (2).jpg'
-        },
-        {
-            URL:'../productimages/carousel images (3).jpg'
-        },
-        {
-            URL:'../productimages/caurousel images 4.jpg'
-        }
+        
+            '../productimages/carousel images (1).jpg',      
+            '../productimages/carousel images (2).jpg',     
+            '../productimages/carousel images (3).jpg', 
+            '../productimages/caurousel images 4.jpg'
     ];
 
     images.forEach((image, index) => {
