@@ -72,20 +72,19 @@
         </section> -->
     </section>
   </header>
-  <Main class="max-w-[80%]">
+  <Main class="max-w-8xl " >
     <section id="home">
-      <div class="container mx auto mt-6">
+      <div class="container mx-auto my-6">
         <div class=" responsive ">
 
-          <img src=" ./productimages/carousel images (1).jpg" alt="">
-          <img src="  ./productimages/carousel images (2).jpg" alt="">
-          <img src="./productimages/caurousel images 4.jpg" alt="">
-          <img src=" ./productimages/carousel images (1).jpg" alt="">
-          <img src="  ./productimages/carousel images (2).jpg" alt="">
-          <img src="./productimages/caurousel images 4.jpg" alt="">
-          <img src=" ./productimages/carousel images (1).jpg" alt="">
-          <img src="  ./productimages/carousel images (2).jpg" alt="">
-          <img src="./productimages/caurousel images 4.jpg" alt="">
+          <img class="p-3"  src="./productimages/carousel images (1).jpg" alt="" >
+          <img class="p-3" src="./productimages/carousel images (2).jpg" alt="">
+          <img class="p-3" src="./productimages/carousel images (4).jpg" alt="">
+          <img class="p-3" src="./productimages/carousel images (7).jpg" alt="">
+          <img class="p-3" src="./productimages/carousel images (8).jpg" alt="">
+          <img class="p-3" src=" ./productimages/carousel images ().jpg" alt="">
+          <img class="p-3" src="  ./productimages/carousel images ().jpg" alt="">
+          <img class="p-3" src=" ./productimages/carousel images ().jpg" alt="">
 
         </div>
       </div>
@@ -96,10 +95,12 @@
   <script>
     $('.responsive').slick({
       dots: true,
-      infinite: false,
+      infinite: true,
+      autoplay:true,
+      nav:true,
       speed: 300,
       slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToScroll: 1,
       responsive: [{
           breakpoint: 1024,
           settings: {
@@ -129,6 +130,11 @@
       ]
     });
   </script>
+  
+  <!--- || PRODCUTS-->
+  <section class="max-w-8xl" id="products">
+   
+  </section>
 </body>
 
 </html>
