@@ -29,9 +29,9 @@
       <nav class="hidden md:block space-x-3 text-xl" aria-label="main">
         <a href="#place" class="hover:text-font-color-hover  font-sans">Home</a>
         <a href="#testimonials" class="hover:text-font-color-hover font-sans">Category</a>
-        <a href="#testimonials" class="hover:text-font-color-hover font-sans">Cart</a>
+        <a href="#testimonials" class="hover:text-font-color-hover font-sans">Cart 🛒</a>
         <a href="#testimonials" class="hover:text-font-color-hover font-sans">Order</a>
-        <a href="#contact" class="hover:text-font-color-hover font-sans">Contact Us</a>
+        <a href="#contact" class="hover:text-font-color-hover font-sans">Contact Us </a>
       </nav>
       <!-- <section
           id="mobile-menu"
@@ -72,19 +72,27 @@
         </section> -->
     </section>
   </header>
-  <Main class="max-w-8xl " >
+  <section class="w-[80%] mt-10" id="products">
+
+    <div class="bg-unique-black ml-96">
+      <input class="font-sans text-3xl font-bold text-center text-white p-6"></input>
+      <button>Search</button>
+    </div>
+
+  </section>
+  <Main class="max-w-8xl ">
     <section id="home">
       <div class="container mx-auto my-6">
         <div class=" responsive ">
 
-          <img class="p-3"  src="./productimages/carousel images (1).jpg" alt="" >
-          <img class="p-3" src="./productimages/carousel images (2).jpg" alt="">
-          <img class="p-3" src="./productimages/carousel images (4).jpg" alt="">
-          <img class="p-3" src="./productimages/carousel images (7).jpg" alt="">
-          <img class="p-3" src="./productimages/carousel images (8).jpg" alt="">
-          <img class="p-3" src=" ./productimages/carousel images ().jpg" alt="">
-          <img class="p-3" src="  ./productimages/carousel images ().jpg" alt="">
-          <img class="p-3" src=" ./productimages/carousel images ().jpg" alt="">
+          <img class="p-3" src="./productimages/image (1).jpg" alt="">
+          <img class="p-3" src="./productimages/image (2).jpg" alt="">
+          <img class="p-3" src="./productimages/image (3).jpg" alt="">
+          <img class="p-3" src="./productimages/image (4).jpg" alt="">
+          <img class="p-3" src="./productimages/image (5).jpg" alt="">
+          <img class="p-3" src="./productimages/freestocks-_3Q3tsJ01nc-unsplash.jpg" alt="">
+          <img class="p-3" src="./productimages/image (7).jpg" alt="">
+          <img class="p-3" src="./productimages/image (8).jpg" alt="">
 
         </div>
       </div>
@@ -96,8 +104,8 @@
     $('.responsive').slick({
       dots: true,
       infinite: true,
-      autoplay:true,
-      nav:true,
+      autoplay: true,
+      nav: true,
       speed: 300,
       slidesToShow: 4,
       slidesToScroll: 1,
@@ -130,10 +138,14 @@
       ]
     });
   </script>
-  
+
   <!--- || PRODCUTS-->
-  <section class="max-w-8xl" id="products">
-   
+  <section class="w-[80%] " id="products">
+
+    <div class="bg-project-bg-2 ml-96">
+      <h1 class="font-sans text-3xl font-bold text-center text-white p-4">Buy And Order</h1>
+    </div>
+
   </section>
 </body>
 
