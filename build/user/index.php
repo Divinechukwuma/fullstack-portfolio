@@ -75,8 +75,11 @@
   <section class="w-[80%] mt-10" id="products">
 
     <div class="bg-unique-black ml-96">
-      <input class="font-sans text-3xl font-bold text-center text-white p-6"></input>
-      <button>Search</button>
+      <div class="font-sans text-center text-black p-5">
+        <input class=" bg-white p-3 rounded pl-10 w-[60%]" type="text" placeholder="Search For Products">
+      <button class="bg-project-bg-2 p-3 rounded ml-2 text-white">Search</button>
+      </div>
+      
     </div>
 
   </section>
