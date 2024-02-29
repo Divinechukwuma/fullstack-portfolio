@@ -32,6 +32,7 @@
         <a href="#testimonials" class="hover:text-font-color-hover font-sans">Cart 🛒</a>
         <a href="#testimonials" class="hover:text-font-color-hover font-sans">Order</a>
         <a href="#contact" class="hover:text-font-color-hover font-sans">Contact Us </a>
+        <a href="#contact" class="hover:text-font-color-hover font-sans md:hidden sm:block">🔍search </a>
       </nav>
       <!-- <section
           id="mobile-menu"
@@ -74,7 +75,7 @@
   </header>
   <section class="w-[80%] mt-10" id="products">
 
-    <div class="bg-unique-black md:ml-[30rem] ml-20">
+    <div class="bg-unique-black md:ml-[30rem] ml-20 hidden md:block">
       <div class="font-sans text-center text-black p-5">
         <input class=" bg-white p-3 rounded pl-10 w-[60%]" type="text" placeholder="Search For Products">
         <button class="bg-project-bg-2 p-3 rounded ml-2 text-white">Search</button>
@@ -115,7 +116,66 @@
 
 
     <section>
-      <div class=" bg-font-color p-4  md:mx-[20rem] mx-10">
+      <div class=" bg-font-color p-10  md:mx-[30rem] mx-10 my-10">
+        
+      <ul
+          class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8"
+        >
+          <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[30%]">
+            <img
+              src="img/pexels-pixabay-532826.jpg"
+              alt="pexels-flo-dahm-699466"
+              class="mb-6 h-40 rounded-3xl"
+            />
+            <h3
+              class="text-2xl sm:text-3xl text-left mt-2 text-white font-extrabold before:font-serif before:absolute before:top-50 before:center-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
+            >
+              EIFFLE TOWER:
+            </h3>
+            <p
+              class="text-2xl sm:text-3xl text-left mt-2 text-white before:font-serif before:absolute before:top-0 before:left-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
+            >
+              We take you too the most popular tourist attraction in france
+            </p>
+          </li>
+          <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[30%]">
+            <img
+              src="img/pexels-pixabay-532826.jpg"
+              alt="pexels-flo-dahm-699466"
+              class="mb-6 h-40 rounded-3xl"
+            />
+            <h3
+              class="text-2xl sm:text-3xl text-left mt-2 text-white font-extrabold before:font-serif before:absolute before:top-50 before:center-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
+            >
+              EIFFLE TOWER:
+            </h3>
+            <p
+              class="text-2xl sm:text-3xl text-left mt-2 text-white before:font-serif before:absolute before:top-0 before:left-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
+            >
+              We take you too the most popular tourist attraction in france
+            </p>
+          </li>
+  
+          <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[30%]">
+            <img
+              src="img/pexels-pixabay-532826.jpg"
+              alt="pexels-flo-dahm-699466"
+              class="mb-6 h-40 rounded-3xl"
+            />
+            <h3
+              class="text-2xl sm:text-3xl text-left mt-2 text-white font-extrabold before:font-serif before:absolute before:top-50 before:center-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
+            >
+              EIFFLE TOWER:
+            </h3>
+            <p
+              class="text-2xl sm:text-3xl text-left mt-2 text-white before:font-serif before:absolute before:top-0 before:left-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
+            >
+              We take you too the most popular tourist attraction in france
+            </p>
+          </li>
+  
+          
+        </ul>
         
       </div>
 
