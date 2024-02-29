@@ -1,3 +1,5 @@
+<?php include('./config/database.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,72 +115,62 @@
 
     </section>
     <!-- || CATEGORY-->
-
-
     <section>
-      <div class=" bg-font-color p-10  md:mx-[30rem] mx-10 my-10">
-        
-      <ul
-          class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8"
-        >
-          <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[30%]">
-            <img
-              src="img/pexels-pixabay-532826.jpg"
-              alt="pexels-flo-dahm-699466"
-              class="mb-6 h-40 rounded-3xl"
-            />
-            <h3
-              class="text-2xl sm:text-3xl text-left mt-2 text-white font-extrabold before:font-serif before:absolute before:top-50 before:center-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
-            >
-              EIFFLE TOWER:
-            </h3>
-            <p
-              class="text-2xl sm:text-3xl text-left mt-2 text-white before:font-serif before:absolute before:top-0 before:left-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
-            >
-              We take you too the most popular tourist attraction in france
-            </p>
-          </li>
-          <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[30%]">
-            <img
-              src="img/pexels-pixabay-532826.jpg"
-              alt="pexels-flo-dahm-699466"
-              class="mb-6 h-40 rounded-3xl"
-            />
-            <h3
-              class="text-2xl sm:text-3xl text-left mt-2 text-white font-extrabold before:font-serif before:absolute before:top-50 before:center-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
-            >
-              EIFFLE TOWER:
-            </h3>
-            <p
-              class="text-2xl sm:text-3xl text-left mt-2 text-white before:font-serif before:absolute before:top-0 before:left-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
-            >
-              We take you too the most popular tourist attraction in france
-            </p>
-          </li>
-  
-          <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[30%]">
-            <img
-              src="img/pexels-pixabay-532826.jpg"
-              alt="pexels-flo-dahm-699466"
-              class="mb-6 h-40 rounded-3xl"
-            />
-            <h3
-              class="text-2xl sm:text-3xl text-left mt-2 text-white font-extrabold before:font-serif before:absolute before:top-50 before:center-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
-            >
-              EIFFLE TOWER:
-            </h3>
-            <p
-              class="text-2xl sm:text-3xl text-left mt-2 text-white before:font-serif before:absolute before:top-0 before:left-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2"
-            >
-              We take you too the most popular tourist attraction in france
-            </p>
-          </li>
-  
-          
-        </ul>
-        
-      </div>
+      <div class="bg-font-color p-10 md:mx-[30rem] mx-10 my-10">
+        <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
 
+          <?php
+
+          //Sql to get the data from the database
+          $sql = "SELECT * FROM tbl_products WHERE active=? AND featured=? LIMIT 4";
+          $stmt = $conn->prepare($sql);
+
+          // Bind parameters
+          $activeValue = 'yes';      // Replace this with the actual value from your application
+          $featuredValue = 'yes';    // Replace this with the actual value from your application
+
+          // Bind the above parameters
+          $stmt->bind_param("ss", $activeValue, $featuredValue);
+          $stmt->execute();
+          $res = $stmt->get_result();
+
+          if ($res->num_rows > 0) {
+            while ($row = $res->fetch_assoc()) {
+              $id = $row['id'];
+              $title = $row['title'];
+              $description = $row['description'];
+              $price = $row['price'];
+              $imageName = $row['imageName']; // Fixed variable name
+              $categoryId = $row['categoryId'];
+          ?>
+              <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
+                <div>
+                  <?php
+                  if ($imageName == "") {
+                    //image not available
+                    echo "image not available";
+                  } else {
+                    //Image available
+                  ?>
+                    <img src="images/food/<?php echo $imageName; ?>" alt="iphone">
+                  <?php
+                  }
+                  ?>
+                </div>
+                <h3 class="text-2xl sm:text-3xl text-left mt-2 text-white font-extrabold before:font-serif before:absolute before:top-50 before:center-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
+                  <?php echo htmlspecialchars($title); ?>
+                </h3>
+                <p class="text-2xl sm:text-3xl text-left mt-2 text-white before:font-serif before:absolute before:top-0 before:left-0 before:text-9xl before:text-white before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-9xl after:text-white after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
+                  <?php echo htmlspecialchars($description) ?>
+                </p>
+              </li>
+
+          <?php
+            }
+          }
+          ?>
+        </ul>
+      </div>
     </section>
 
 
