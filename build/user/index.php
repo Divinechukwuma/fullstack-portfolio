@@ -152,7 +152,7 @@
                   } else {
                     //Image available
                   ?>
-                    <img src="images/food/<?php echo $imageName; ?>" alt="iphone">
+                    <img src="./productimages/<?php echo $imageName; ?>" alt="iphone">
                   <?php
                   }
                   ?>
