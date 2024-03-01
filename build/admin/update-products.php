@@ -126,6 +126,7 @@ if (isset($_POST['submit'])) {
     $id = $_POST['id'];
     $title = $_POST['title'];
     $price = $_POST['price'];
+    $description = $_POST['description'];
     $CurrentImage = $_POST['currentImage'];
     $featured = $_POST['featured'];
     $active = $_POST['active'];
@@ -218,13 +219,14 @@ if (isset($_POST['submit'])) {
     $sql2 = "UPDATE tbl_products SET 
         title = ?,
         price = ?,
+        description = ?,
         imageName= ?,
         featured = ?,
         active = ?
         WHERE id = ?";
 
     $stmt2 = $conn->prepare($sql2);
-    $stmt2->bind_param("sdsssi", $title, $price, $imageName, $featured, $active, $id);
+    $stmt2->bind_param("sdssssi", $title, $price,$description, $imageName, $featured, $active, $id);
     $stmt2->execute();
     $res2 = $stmt2->get_result();
 
