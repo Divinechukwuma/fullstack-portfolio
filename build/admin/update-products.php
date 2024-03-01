@@ -149,7 +149,7 @@ if (isset($_POST['submit'])) {
                 //Invalid file type
                 //Handle accordingly (show error message)
 
-                echo "Invalid file type. Allowed types: 'jpg','jpeg','png','gif','svg'";
+                echo "Invalid file type. Allowed types: 'jpg','jpeg','png','gif','svg','jfif'";
             } else {
 
                 //Image file limit
