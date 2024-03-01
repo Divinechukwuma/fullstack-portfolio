@@ -50,6 +50,7 @@ if (isset($_SESSION['pass'])) //checking if the session is set or not
                     <th class="p-6">Full-Name</th>
                     <th class="p-6">Username</th>
                     <th class="p-6">Actions</th>
+                    <h1>omo sha</h1>
                 </tr>
             </thead><br>
             <?php
