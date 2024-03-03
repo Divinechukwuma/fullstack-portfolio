@@ -731,10 +731,6 @@ video {
   max-height: 8rem;
 }
 
-.max-h-64 {
-  max-height: 16rem;
-}
-
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1312,6 +1308,10 @@ video {
     margin-left: 10rem;
   }
 
+  .md\:ml-\[10rem\] {
+    margin-left: 10rem;
+  }
+
   .md\:ml-\[8rem\] {
     margin-left: 8rem;
   }
@@ -1324,8 +1324,16 @@ video {
     display: none;
   }
 
+  .md\:w-\[80\%\] {
+    width: 80%;
+  }
+
   .md\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
   }
 }
