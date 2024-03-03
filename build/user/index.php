@@ -107,251 +107,286 @@
 
 
     <!--- || PRODCUTS-->
-    <section class="w-[80%] " id="products">
+    <section class="w-[80%] " id="Categories">
 
       <div class="bg-project-bg-2 md:mx-[15rem]  w-full justify-center flex ">
-        <h1 class="font-sans text-3xl font-bold text-center text-white p-4">Buy And Order</h1>
+        <h1 class="font-sans text-3xl font-bold text-center text-white p-4">Categories</h1>
       </div>
 
     </section>
     <!-- || CATEGORY-->
+
     <!--|| GADGETS-->
-    <section>
-      <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
-        <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
 
-          <?php
+    <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
+      <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Gadgets</h1>
+      <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
 
-          //Sql to get the data from the database
-          $sql = "SELECT * FROM tbl_products WHERE active=? AND featured=? LIMIT 4";
-          $stmt = $conn->prepare($sql);
+        <?php
 
-          // Bind parameters
-          $activeValue = 'yes';      // Replace this with the actual value from your application
-          $featuredValue = 'yes';    // Replace this with the actual value from your application
+        //Sql to get the data from the database
+        $sql = "SELECT * FROM tbl_products WHERE active=? AND featured=? LIMIT 4";
+        $stmt = $conn->prepare($sql);
 
-          // Bind the above parameters
-          $stmt->bind_param("ss", $activeValue, $featuredValue);
-          $stmt->execute();
-          $res = $stmt->get_result();
+        // Bind parameters
+        $activeValue = 'yes';      // Replace this with the actual value from your application
+        $featuredValue = 'yes';    // Replace this with the actual value from your application
 
-          if ($res->num_rows > 0) {
-            while ($row = $res->fetch_assoc()) {
-              $id = $row['id'];
-              $title = $row['title'];
-              $description = $row['description'];
-              $price = $row['price'];
-              $imageName = $row['imageName']; // Fixed variable name
-              $categoryId = $row['categoryId'];
-          ?>
-              <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
-                <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> <?php echo htmlspecialchars($price) ?> ⧽</p>
-                <div>
-                  <?php
-                  if ($imageName == "") {
-                    //image not available
-                    echo "image not available";
+        // Bind the above parameters
+        $stmt->bind_param("ss", $activeValue, $featuredValue);
+        $stmt->execute();
+        $res = $stmt->get_result();
+
+        if ($res->num_rows > 0) {
+          while ($row = $res->fetch_assoc()) {
+            $id = $row['id'];
+            $title = $row['title'];
+            $description = $row['description'];
+            $price = $row['price'];
+            $imageName = $row['imageName']; // Fixed variable name
+            $categoryId = $row['categoryId'];
+        ?>
+            <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
+              <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
+              <div>
+                <?php
+                if ($imageName == "") {
+                  // Image not available
+                  echo "Image not available";
+                } else {
+                  // Image available
+                  $imagePath = "../admin/images/goods" . $imageName;
+
+                  if (file_exists($imagePath)) {
+                ?>
+                    <img src="<?php echo $imagePath; ?>" alt="iphone" class="rounded-xl  max-h-32 max-w-32">
+                <?php
                   } else {
-                    //Image available
-                  ?>
-                    <img src="../admin/images/<?php echo $imageName; ?>" alt="iphone" class="rounded-xl max-h-96">
-                  <?php
+                    echo "Image not found";
                   }
-                  ?>
-                </div>
-                <h3 class="text-2xl sm:text-3xl text-left mt-2 text-project-bg font-bold  before:font-serif before:absolute before:top-50 before:center-0 before:text-2xl before:text-project-bg before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-project-bg after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
-                  <?php echo htmlspecialchars($title); ?>
-                </h3>
-                <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
-                  <?php echo htmlspecialchars($description) ?>
-                </p>
-              </li>
+                }
+                ?>
+              </div>
+              <h3 class="text-2xl sm:text-3xl text-left mt-2 text-project-bg font-bold  before:font-serif before:absolute before:top-50 before:center-0 before:text-2xl before:text-project-bg before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-project-bg after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
+                <?php echo htmlspecialchars($title); ?>
+              </h3>
+              <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
+                <?php echo htmlspecialchars($description) ?>
+              </p>
+            </li>
 
-          <?php
-            }
+        <?php
           }
-          ?>
-        </ul>
-      </div>
-    
-    <!-- || CLOTHES-->
+        }
+        ?>
+      </ul>
+    </div>
 
-      <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
-        <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
+    <!--|| CLOTHES-->
 
-          <?php
+    <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
+      <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Clothes</h1>
+      <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
 
-          //Sql to get the data from the database
-          $sql = "SELECT * FROM tbl_products WHERE active=? AND featured=? LIMIT 4";
-          $stmt = $conn->prepare($sql);
+        <?php
 
-          // Bind parameters
-          $activeValue = 'no';      // Replace this with the actual value from your application
-          $featuredValue = 'yes';    // Replace this with the actual value from your application
+        //Sql to get the data from the database
+        $sql = "SELECT * FROM tbl_products WHERE active=? AND featured=? LIMIT 4";
+        $stmt = $conn->prepare($sql);
 
-          // Bind the above parameters
-          $stmt->bind_param("ss", $activeValue, $featuredValue);
-          $stmt->execute();
-          $res = $stmt->get_result();
+        // Bind parameters
+        $activeValue = 'no';      // Replace this with the actual value from your application
+        $featuredValue = 'yes';    // Replace this with the actual value from your application
 
-          if ($res->num_rows > 0) {
-            while ($row = $res->fetch_assoc()) {
-              $id = $row['id'];
-              $title = $row['title'];
-              $description = $row['description'];
-              $price = $row['price'];
-              $imageName = $row['imageName']; // Fixed variable name
-              $categoryId = $row['categoryId'];
-          ?>
-              <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
-                <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> <?php echo htmlspecialchars($price) ?> ⧽</p>
-                <div>
-                  <?php
-                  if ($imageName == "") {
-                    //image not available
-                    echo "image not available";
+        // Bind the above parameters
+        $stmt->bind_param("ss", $activeValue, $featuredValue);
+        $stmt->execute();
+        $res = $stmt->get_result();
+
+        if ($res->num_rows > 0) {
+          while ($row = $res->fetch_assoc()) {
+            $id = $row['id'];
+            $title = $row['title'];
+            $description = $row['description'];
+            $price = $row['price'];
+            $imageName = $row['imageName']; // Fixed variable name
+            $categoryId = $row['categoryId'];
+        ?>
+            <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
+              <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> <?php echo htmlspecialchars($price) ?> ᐳ</p>
+              <div>
+                <?php
+                if ($imageName == "") {
+                  // Image not available
+                  echo "Image not available";
+                } else {
+                  // Image available
+                  $imagePath = "../admin/images/goods" . $imageName;
+
+                  if (file_exists($imagePath)) {
+                ?>
+                    <img src="<?php echo $imagePath; ?>" alt="iphone" class="rounded-xl  max-h-32 max-w-32">
+                <?php
                   } else {
-                    //Image available
-                  ?>
-                    <img src="../admin/images/<?php echo $imageName; ?>" alt="iphone" class="rounded-xl max-h-96">
-                  <?php
+                    echo "Image not found";
                   }
-                  ?>
-                </div>
-                <h3 class="text-2xl sm:text-3xl text-left mt-2 text-project-bg font-bold  before:font-serif before:absolute before:top-50 before:center-0 before:text-2xl before:text-project-bg before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-project-bg after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
-                  <?php echo htmlspecialchars($title); ?>
-                </h3>
-                <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
-                  <?php echo htmlspecialchars($description) ?>
-                </p>
-              </li>
+                }
+                ?>
+              </div>
+              <h3 class="text-2xl sm:text-3xl text-left mt-2 text-project-bg font-bold  before:font-serif before:absolute before:top-50 before:center-0 before:text-2xl before:text-project-bg before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-project-bg after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
+                <?php echo htmlspecialchars($title); ?>
+              </h3>
+              <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
+                <?php echo htmlspecialchars($description) ?>
+              </p>
+            </li>
 
-          <?php
-            }
+        <?php
           }
-          ?>
-        </ul>
-      </div>
+        }
+        ?>
+      </ul>
+    </div>
 
-      <!-- ||ELECTRONICS-->
+    <!--|| Electronics-->
 
-      <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
-        <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
+    <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
+      <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Electronics</h1>
+      <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
 
-          <?php
+        <?php
 
-          //Sql to get the data from the database
-          $sql = "SELECT * FROM tbl_products WHERE active=? AND featured=? LIMIT 4";
-          $stmt = $conn->prepare($sql);
+        //Sql to get the data from the database
+        $sql = "SELECT * FROM tbl_products WHERE active=? AND featured=? LIMIT 4";
+        $stmt = $conn->prepare($sql);
 
-          // Bind parameters
-          $activeValue = 'yes';      // Replace this with the actual value from your application
-          $featuredValue = 'no';    // Replace this with the actual value from your application
+        // Bind parameters
+        $activeValue = 'yes';      // Replace this with the actual value from your application
+        $featuredValue = 'no';    // Replace this with the actual value from your application
 
-          // Bind the above parameters
-          $stmt->bind_param("ss", $activeValue, $featuredValue);
-          $stmt->execute();
-          $res = $stmt->get_result();
+        // Bind the above parameters
+        $stmt->bind_param("ss", $activeValue, $featuredValue);
+        $stmt->execute();
+        $res = $stmt->get_result();
 
-          if ($res->num_rows > 0) {
-            while ($row = $res->fetch_assoc()) {
-              $id = $row['id'];
-              $title = $row['title'];
-              $description = $row['description'];
-              $price = $row['price'];
-              $imageName = $row['imageName']; // Fixed variable name
-              $categoryId = $row['categoryId'];
-          ?>
-              <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
-                <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> <?php echo htmlspecialchars($price) ?> ⧽</p>
-                <div>
-                  <?php
-                  if ($imageName == "") {
-                    //image not available
-                    echo "image not available";
+        if ($res->num_rows > 0) {
+          while ($row = $res->fetch_assoc()) {
+            $id = $row['id'];
+            $title = $row['title'];
+            $description = $row['description'];
+            $price = $row['price'];
+            $imageName = $row['imageName']; // Fixed variable name
+            $categoryId = $row['categoryId'];
+        ?>
+            <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
+              <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> <?php echo htmlspecialchars($price) ?> ᐳ</p>
+              <div>
+                <?php
+                if ($imageName == "") {
+                  // Image not available
+                  echo "Image not available";
+                } else {
+                  // Image available
+                  $imagePath = "../admin/images/goods" . $imageName;
+
+                  if (file_exists($imagePath)) {
+                ?>
+                    <img src="<?php echo $imagePath; ?>" alt="iphone" class="rounded-xl  max-h-32 max-w-32">
+                <?php
                   } else {
-                    //Image available
-                  ?>
-                    <img src="../admin/images/<?php echo $imageName; ?>" alt="iphone" class="rounded-xl max-h-96">
-                  <?php
+                    echo "Image not found";
                   }
-                  ?>
-                </div>
-                <h3 class="text-2xl sm:text-3xl text-left mt-2 text-project-bg font-bold  before:font-serif before:absolute before:top-50 before:center-0 before:text-2xl before:text-project-bg before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-project-bg after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
-                  <?php echo htmlspecialchars($title); ?>
-                </h3>
-                <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
-                  <?php echo htmlspecialchars($description) ?>
-                </p>
-              </li>
+                }
+                ?>
+              </div>
+              <h3 class="text-2xl sm:text-3xl text-left mt-2 text-project-bg font-bold  before:font-serif before:absolute before:top-50 before:center-0 before:text-2xl before:text-project-bg before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-project-bg after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
+                <?php echo htmlspecialchars($title); ?>
+              </h3>
+              <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
+                <?php echo htmlspecialchars($description) ?>
+              </p>
+            </li>
 
-          <?php
-            }
+        <?php
           }
-          ?>
-        </ul>
-      </div>
+        }
+        ?>
+      </ul>
+    </div>
 
-      <!--|| APPLLIANCES-->
+    <!--|| APPLIANCES-->
 
-      <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
-        <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
+    <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
+      <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Appliances</h1>
+      <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
 
-          <?php
+        <?php
 
-          //Sql to get the data from the database
-          $sql = "SELECT * FROM tbl_products WHERE active=? AND featured=? LIMIT 4";
-          $stmt = $conn->prepare($sql);
+        //Sql to get the data from the database
+        $sql = "SELECT * FROM tbl_products WHERE active=? AND featured=? LIMIT 4";
+        $stmt = $conn->prepare($sql);
 
-          // Bind parameters
-          $activeValue = 'no';      // Replace this with the actual value from your application
-          $featuredValue = 'no';    // Replace this with the actual value from your application
+        // Bind parameters
+        $activeValue = 'no';      // Replace this with the actual value from your application
+        $featuredValue = 'no';    // Replace this with the actual value from your application
 
-          // Bind the above parameters
-          $stmt->bind_param("ss", $activeValue, $featuredValue);
-          $stmt->execute();
-          $res = $stmt->get_result();
+        // Bind the above parameters
+        $stmt->bind_param("ss", $activeValue, $featuredValue);
+        $stmt->execute();
+        $res = $stmt->get_result();
 
-          if ($res->num_rows > 0) {
-            while ($row = $res->fetch_assoc()) {
-              $id = $row['id'];
-              $title = $row['title'];
-              $description = $row['description'];
-              $price = $row['price'];
-              $imageName = $row['imageName']; // Fixed variable name
-              $categoryId = $row['categoryId'];
-          ?>
-              <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
-                <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> <?php echo htmlspecialchars($price) ?> ⧽</p>
-                <div>
-                  <?php
-                  if ($imageName == "") {
-                    //image not available
-                    echo "image not available";
+        if ($res->num_rows > 0) {
+          while ($row = $res->fetch_assoc()) {
+            $id = $row['id'];
+            $title = $row['title'];
+            $description = $row['description'];
+            $price = $row['price'];
+            $imageName = $row['imageName']; // Fixed variable name
+            $categoryId = $row['categoryId'];
+        ?>
+            <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
+              <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> <?php echo htmlspecialchars($price) ?> ᐳ</p>
+              <div>
+                <?php
+                if ($imageName == "") {
+                  // Image not available
+                  echo "Image not available";
+                } else {
+                  // Image available
+                  $imagePath = "../admin/images/goods" . $imageName;
+
+                  if (file_exists($imagePath)) {
+                ?>
+                    <img src="<?php echo $imagePath; ?>" alt="iphone" class="rounded-xl max-h-32 max-w-32">
+                <?php
                   } else {
-                    //Image available
-                  ?>
-                    <img src="../admin/images/<?php echo $imageName; ?>" alt="iphone" class="rounded-xl max-h-96">
-                  <?php
+                    echo "Image not found";
                   }
-                  ?>
-                </div>
-                <h3 class="text-2xl sm:text-3xl text-left mt-2 text-project-bg font-bold  before:font-serif before:absolute before:top-50 before:center-0 before:text-2xl before:text-project-bg before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-project-bg after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
-                  <?php echo htmlspecialchars($title); ?>
-                </h3>
-                <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
-                  <?php echo htmlspecialchars($description) ?>
-                </p>
-              </li>
+                }
+                ?>
+              </div>
+              <h3 class="text-2xl sm:text-3xl text-left mt-2 text-project-bg font-bold  before:font-serif before:absolute before:top-50 before:center-0 before:text-2xl before:text-project-bg before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-project-bg after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
+                <?php echo htmlspecialchars($title); ?>
+              </h3>
+              <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
+                <?php echo htmlspecialchars($description) ?>
+              </p>
+            </li>
 
-          <?php
-            }
+        <?php
           }
-          ?>
-        </ul>
-      </div>
+        }
+        ?>
+      </ul>
+    </div>
 
     </section>
+
+    <section class="w-[80%] " id="Products">
+
+      <div class="bg-project-bg-2 md:mx-[15rem]  w-full justify-center flex ">
+        <h1 class="font-sans text-3xl font-bold text-center text-white p-4">Buy Or Order</h1>
+      </div>
 
 
   </Main>
