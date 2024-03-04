@@ -77,7 +77,7 @@
   </header>
   <section class="w-[80%] mt-10" id="products">
 
-    <div class="bg-unique-black md:mx-[15rem]  sm:hidden md:block w-full justify-center flex ">
+    <div class="bg-unique-black md:mx-[15rem]  sm:hidden md:block w-full mx-10 ">
       <div class="font-sans text-center text-black p-5">
         <input class=" bg-white p-3 rounded pl-10 w-[60%]" type="text" placeholder="Search For Products">
         <button class="bg-project-bg-2 p-3 rounded ml-2 text-white">Search</button>
@@ -109,8 +109,8 @@
     <!--- || CATEGORIES-->
     <section class="w-[80%] " id="category">
 
-      <div class="bg-project-bg-2 md:mx-[15rem]  w-full justify-center flex ">
-        <h1 class="font-sans text-3xl font-bold text-center md:text-left text-white p-4">Categories</h1>
+      <div class="bg-project-bg-2 w-full mx-10  md:mx-[15rem]">
+        <h1 class="font-sans text-3xl font-bold text-center  text-white p-4">Categories</h1>
       </div>
 
     </section class="w-full md:w-[80%]">
@@ -118,9 +118,9 @@
 
     <!--|| GADGETS-->
 
-    <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10 md">
+    <div class="bg-font-color p-2 md:mx-[30rem] mx-10 ">
       <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Gadgets</h1>
-      <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
+      <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center ">
 
         <?php
 
@@ -146,7 +146,7 @@
             $imageName = $row['imageName']; // Fixed variable name
             $categoryId = $row['categoryId'];
         ?>
-            <li class="bg-font-color-hover py-1 px-4  rounded-3xl shadow-xl w-[20%]">
+            <li class="bg-font-color-hover py-1 px-4  rounded-3xl shadow-xl w-[20%] ">
               <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
               <div>
                 <?php
@@ -448,16 +448,12 @@
     </section>
   </Main>
 
-  <header class="bg-unique-black text-white sticky bottom-0 z-10 py-10">
+  <header class="bg-unique-black text-white sticky  z-10 py-2">
     <section class="max-w-8xl mx-auto text-center">
       <h1 class="text-3xl font-medium">
         <a href="#hero"><span class="text-yellow-300 font-serif">🌏Divine-</span>Online-Shop
         </a>
       </h1>
-
-      <button id="hamburger-button" class="text-3xl sm:block md:hidden cursor-pointer">
-        &#9776;
-      </button>
 
       <nav class="hidden md:block space-x-3 text-xl" aria-label="main">
         <a href="#place" class="hover:text-font-color-hover  font-sans">Home</a>
@@ -468,11 +464,17 @@
         <a href="#contact" class="hover:text-font-color-hover font-sans md:hidden sm:block">🔍search </a>
       </nav>
       <h1 class="text-extrabold text-3xl">Follow us on</h1>
-      
+      <div class="flex justify-center py-4 ">
+        <img src="../user/productimages/icons (1).png" alt="" class="max-h-10 max-w-10 p-2">
+        <img src="../user/productimages/icons (2).png" alt="" class="max-h-10 max-w-10 p-2">
+        <img src="../user/productimages/icons (3).png" alt="" class="max-h-10 max-w-10 p-2">
+        <img src="../user/productimages/icons (4).png" alt="" class="max-h-10 max-w-10 p-2">
+      </div>
+
     </section>
   </header>
 
- 
+
 
   <script>
     $('.responsive').slick({
