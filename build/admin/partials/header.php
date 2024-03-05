@@ -22,7 +22,7 @@
           <a href="index.php" class="text-font-color hover:text-font-color-hover font-sans font-medium active:bg-red-500">Dashboard</a>
           <a href="manage-admin.php" class="text-font-color hover:text-font-color-hover sans font-medium active:bg-red-500">Admin</a>
           <a href="manage-products.php" class="text-font-color hover:text-font-color-hover font-sans font-medium active:bg-red-500">Products</a>
-          <a href="#place" class="text-font-color hover:text-font-color-hover font-sans font-medium active:bg-red-500">Category</a>
+          <a href="manage-category.php" class="text-font-color hover:text-font-color-hover font-sans font-medium active:bg-red-500">Category</a>
           <a href="#place" class="text-font-color hover:text-font-color-hover font-sans font-medium active:bg-red-500">Order</a>
           <a href="#place" class="text-font-color hover:text-font-color-hover font-sans font-medium active:bg-red-500">Contact Us </a>
         </nav>

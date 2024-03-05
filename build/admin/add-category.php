@@ -22,20 +22,6 @@
             </tr>
 
             <tr>
-                <td>Description:</td>
-                <td>
-                    <textarea name="description" cols="30" rows="5" placeholder="Description of food"></textarea>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Prices:</td>
-                <td>
-                    <input type="number" name="price" placeholder="Price">
-                </td>
-            </tr>
-
-            <tr>
                 <td>Image:</td>
                 <td>
                     <input type="file" name="image">
@@ -78,8 +64,6 @@ if (isset($_POST['submit'])) {
 
     // echo 'im awesome';
     $title = $_POST['title'];
-    $description = $_POST['description'];
-    $price = $_POST['price'];
 
     //when using radio button make sure it is checked
 
@@ -153,20 +137,20 @@ if (isset($_POST['submit'])) {
 
 
     //sql query to insert the data into the data base
-    $sql = "INSERT INTO tbl_products (title,price,description,imageName,featured,active) VALUES(?,?,?,?,?,?)";
+    $sql = "INSERT INTO tbl_category (title,image_name,featured,active) VALUES(?,?,?,?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sdssss', $title, $price, $description, $imageName, $featured, $active);
+    $stmt->bind_param('ssss', $title, $imageName, $featured, $active);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
         // Data inserted
-        $_SESSION['add'] = "<div class='text-green-500 uppercase'>Product Added successfully.</div>";
+        $_SESSION['add'] = "<div class='text-green-500 uppercase'>category Added successfully.</div>";
 
-        header("location: manage-products.php");
+        header("location: manage-category.php");
     } else {
         // Failed to insert data
-        $_SESSION['add'] = "<div class='text-red-500 uppercase'>Failed to add product.</div>";
-        header("location: add-products.php");
+        $_SESSION['add'] = "<div class='text-red-500 uppercase'>Failed to add category.</div>";
+        header("location: add-category.php");
     }
 
     $stmt->close();
