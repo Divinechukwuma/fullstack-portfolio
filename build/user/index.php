@@ -16,7 +16,7 @@
   <!-- <script src="./javascript/slider.js" defer></script> -->
 </head>
 
-<body class="min-h-screen bg-font-color-hover">
+<body class=" bg-font-color-hover">
   <header class="bg-project-bg text-white sticky top-0 z-10">
     <section class="max-w-8xl mx-auto p-4 flex justify-between items-center">
       <h1 class="text-3xl font-medium">
@@ -29,7 +29,7 @@
       </button>
 
       <nav class="hidden md:block space-x-3 text-xl" aria-label="main">
-        <a href="#place" class="hover:text-font-color-hover  font-sans">Home</a>
+        <a href="#home" class="hover:text-font-color-hover  font-sans">Home</a>
         <a href="#category" class="hover:text-font-color-hover font-sans scroll-smooth">Category</a>
         <a href="#testimonials" class="hover:text-font-color-hover font-sans">Cart 🛒</a>
         <a href="#testimonials" class="hover:text-font-color-hover font-sans">Order</a>
@@ -88,7 +88,7 @@
   </section>
   <Main class="max-w-8xl ">
     <section id="home">
-      <div class="container mx-auto my-6">
+      <div class="max-w-[70%] mx-auto my-6">
         <div class=" responsive ">
 
           <img class="p-3" src="./productimages/image (1).jpg" alt="">
@@ -113,14 +113,14 @@
         <h1 class="font-sans text-3xl font-bold text-center  text-white p-4">Categories</h1>
       </div>
 
-    </section class="w-full md:w-[80%]">
+    </section>
     <!-- || CATEGORY-->
 
     <!--|| GADGETS-->
 
-    <div class="bg-font-color p-2 md:mx-[30rem] mx-10 ">
+    <div class="bg-font-color ">
       <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Gadgets</h1>
-      <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center ">
+      <ul class="list-none grid grid-cols-1 items-center">
 
         <?php
 
@@ -146,7 +146,7 @@
             $imageName = $row['imageName']; // Fixed variable name
             $categoryId = $row['categoryId'];
         ?>
-            <li class="bg-font-color-hover py-1 px-4  rounded-3xl shadow-xl w-[20%] ">
+            <li class="bg-font-color-hover py-1 px-10  rounded-3xl shadow-xl w-[20%] ">
               <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
               <div>
                 <?php
@@ -390,7 +390,7 @@
 
       <div class="bg-font-color p-2 md:ml-[10rem] mx-10 my-10 justify-center">
         <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Available for sale</h1>
-        <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
+        <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap flex-row items-center gap-8">
 
           <?php
 
@@ -464,6 +464,13 @@
         <a href="#contact" class="hover:text-font-color-hover font-sans md:hidden sm:block">🔍search </a>
       </nav>
       <h1 class="text-extrabold text-3xl">Follow us on</h1>
+      <div class="flex justify-center py-4 ">
+        <img src="../user/productimages/icons (1).png" alt="" class="max-h-10 max-w-10 p-2">
+        <img src="../user/productimages/icons (2).png" alt="" class="max-h-10 max-w-10 p-2">
+        <img src="../user/productimages/icons (3).png" alt="" class="max-h-10 max-w-10 p-2">
+        <img src="../user/productimages/icons (4).png" alt="" class="max-h-10 max-w-10 p-2">
+      </div>
+      <h1 class="text-extrabold text-3xl">payment method</h1>
       <div class="flex justify-center py-4 ">
         <img src="../user/productimages/icons (1).png" alt="" class="max-h-10 max-w-10 p-2">
         <img src="../user/productimages/icons (2).png" alt="" class="max-h-10 max-w-10 p-2">
