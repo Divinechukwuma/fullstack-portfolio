@@ -137,7 +137,7 @@ if (isset($_POST['submit'])) {
 
 
     //sql query to insert the data into the data base
-    $sql = "INSERT INTO tbl_category (title,image_name,featured,active) VALUES(?,?,?,?)";
+    $sql = "INSERT INTO tbl_category (title,imageName,featured,active) VALUES(?,?,?,?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssss', $title, $imageName, $featured, $active);
     $stmt->execute();

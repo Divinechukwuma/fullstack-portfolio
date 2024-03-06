@@ -1,7 +1,7 @@
 <?php include('./partials/header.php') ?><br>
 
 <div class="max-w-8xl">
-    <h1 class=" text-4xl ml-10 font-extrabold">Update Products</h1><br><br>
+    <h1 class=" text-4xl ml-10 font-extrabold">Update category</h1><br><br>
     <?php
 
     if (isset($_GET['id'])) {
@@ -11,7 +11,7 @@
 
         //sql query to get the data 
 
-        $sql = "SELECT * FROM tbl_products WHERE id=?";
+        $sql = "SELECT * FROM tbl_category WHERE id=?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('i', $id);
         $stmt->execute();
@@ -21,10 +21,7 @@
         $row = $res->fetch_assoc();
 
         $title = $row['title'];
-        $description = $row['description'];
-        $price = $row['price'];
         $CurrentImage = $row['imageName'];
-        $Current_category = $row['categoryId'];
         $featured = $row['featured'];
         $active = $row['active'];
     }
@@ -39,20 +36,6 @@
                 <td>Title:</td>
                 <td>
                     <input type="text" name="title" Value="<?php echo htmlspecialchars($title); ?>">
-                </td>
-            </tr>
-
-            <tr>
-                <td>Description:</td>
-                <td>
-                    <textarea name="description" cols="30" rows="5"><?php echo htmlspecialchars($description) ?></textarea>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Prices:</td>
-                <td>
-                    <input type="number" name="price" value="<?php echo htmlspecialchars($price) ?>">
                 </td>
             </tr>
 
@@ -78,45 +61,6 @@
                 <td>Select new image:</td>
                 <td>
                     <input type="file" name="image">
-                </td>
-            </tr>
-
-            <tr>
-                <td>Category</td>
-                <td>
-                    <select name="category">
-
-                    <?php 
-                    //query to get active categories
-                    $sql = "SELECT * FROM tbl_category WHERE active='?'";
-                    $stmt = $conn->prepare($sql);
-                    $active = 'yes';
-                    $stmt->bind_param('s',$active);
-                    $stmt->execute();
-                    $res = $stmt->get_result();
-                    //Count rows
-
-                    $count = $res->num_rows();
-
-                    //Check whether category available or not
-                    if($count>0){
-                        //Category available
-                        while($row=mysqli_fetch_assoc($res)){
-                            $Category_title=$row['title'];
-                            $Category_id = $row['id'];
-
-                            //echo "<option value='$Category_id;'>$Category_title;</option>"
-                            ?>
-                            <option <?php if($Current_category==$Category_id){echo "selected";}?> value="<?php echo $Category_id;?>"><?php echo $Category_title;?></option>
-                            <?php
-                        }
-                    }else{
-                        //Category not available
-                        echo "<option value='0'>Category not available.</option>";
-                    }
-                    ?>
-                          
-                    </select>
                 </td>
             </tr>
 
@@ -149,7 +93,7 @@
                 <td>
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <input type="hidden" name="currentImage" value="<?php echo $CurrentImage; ?>">
-                    <input type="submit" name="submit" value="Update Products" class="bg-project-bg-2 p-4 rounded-xl mt-3 hover:bg-blue-900 text-white">
+                    <input type="submit" name="submit" value="Update category" class="bg-project-bg-2 p-4 rounded-xl mt-3 hover:bg-blue-900 text-white">
                 </td>
             </tr>
 
@@ -165,8 +109,6 @@ if (isset($_POST['submit'])) {
     //1.Get all the details from form
     $id = $_POST['id'];
     $title = $_POST['title'];
-    $price = $_POST['price'];
-    $description = $_POST['description'];
     $CurrentImage = $_POST['currentImage'];
     $featured = $_POST['featured'];
     $active = $_POST['active'];
@@ -242,7 +184,7 @@ if (isset($_POST['submit'])) {
                     //Failed to remove the images is recovered or not 
                     $_SESSION['up'] = "<div class='text-red-500 uppercase'>Failed to remove current image.</div>";
                     //Redirect to food page
-                    header('location:manage-products.php');
+                    header('location:manage-category.php');
                     //stop process
                     die();
                 }
@@ -256,17 +198,15 @@ if (isset($_POST['submit'])) {
 
     //4.Update the food in database
 
-    $sql2 = "UPDATE tbl_products SET 
+    $sql2 = "UPDATE tbl_category SET 
         title = ?,
-        price = ?,
-        description = ?,
         imageName= ?,
         featured = ?,
         active = ?
         WHERE id = ?";
 
     $stmt2 = $conn->prepare($sql2);
-    $stmt2->bind_param("sdssssi", $title, $price,$description, $imageName, $featured, $active, $id);
+    $stmt2->bind_param("ssssi", $title, $imageName, $featured, $active, $id);
     $stmt2->execute();
     $res2 = $stmt2->get_result();
 
@@ -275,12 +215,12 @@ if (isset($_POST['submit'])) {
         // Query executed and menu updated 
         $_SESSION['updated'] = "<div class='text-green-500 uppercase'>products updated successfully.</div>";
         // Redirect
-        header('location:manage-products.php');
+        header('location:manage-category.php');
     } else {
         // Failed to update
         $_SESSION['n-u'] = "<div class='text-red-500 uppercase'>Failed to update products.</div>";
         // Redirect
-        header('location:manage-products.php');
+        header('location:manage-category.php');
     }
 }
 ?>

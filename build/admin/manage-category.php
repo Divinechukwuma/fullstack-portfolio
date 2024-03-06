@@ -2,7 +2,32 @@
 
 
 <div class="my-10">
-    <a class="  p-6  rounded-xl  bg-project-bg-2 hover:bg-blue-900 text-font-color m-10" href="add-category.php"> Add category</a>
+    <a class="  p-6  rounded-xl  bg-project-bg-2 hover:bg-blue-900 text-font-color m-10" href="add-category.php"> Add category</a><br><br>
+
+    
+    <?php
+    if (isset($_SESSION['add'])) {
+        echo $_SESSION['add'];
+        unset($_SESSION['add']);
+    }
+
+    ?>
+
+<?php
+    if (isset($_SESSION['del'])) {
+        echo $_SESSION['del'];
+        unset($_SESSION['del']);
+    }
+
+    ?>
+
+<?php
+    if (isset($_SESSION['delete'])) {
+        echo $_SESSION['delete'];
+        unset($_SESSION['delete']);
+    }
+
+    ?>
 
 
     <div class="m-10 pb-5">
@@ -34,7 +59,7 @@
                     while ($row = $res->fetch_assoc()) {
                         $id = $row['id'];
                         $title = $row['title'];
-                        $imageName = $row['image_name'];
+                        $imageName = $row['imageName'];
                         $featured = $row['featured'];
                         $active = $row['active'];
 
@@ -61,8 +86,8 @@
                                 </td>
                                 <td class="p-6 border "><?php echo htmlspecialchars($featured) ?></td>
                                 <td class="p-6 border "><?php echo htmlspecialchars($active) ?></td>
-                                <td class=" p-6 border"><a class="  p-5  rounded-xl  bg-project-bg-2 hover:bg-blue-900 text-font-color" href="update-products.php?id=<?php echo $id; ?>"> Update Products</a></td>
-                                <td class="p-2 border"><a class="  p-5  rounded-xl  bg-red-300 hover:bg-red-600 text-font-color" href="delete-products.php?id=<?php echo $id ?>&imageName=<?php echo $imageName ?>"> Delete Products</a></td>
+                                <td class=" p-6 border"><a class="  p-5  rounded-xl  bg-project-bg-2 hover:bg-blue-900 text-font-color" href="update-category.php?id=<?php echo $id; ?>"> Update category</a></td>
+                                <td class="p-2 border"><a class="  p-5  rounded-xl  bg-red-300 hover:bg-red-600 text-font-color" href="delete-category.php?id=<?php echo $id ?>&imageName=<?php echo $imageName ?>"> Delete category</a></td>
                             </tr>
                         </tbody>
 
