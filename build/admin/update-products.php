@@ -1,8 +1,6 @@
 <?php include('./partials/header.php') ?><br>
 
-<div class="max-w-8xl">
-    <h1 class=" text-4xl ml-10 font-extrabold">Update Products</h1><br><br>
-    <?php
+<?php
 
     if (isset($_GET['id'])) {
         //Get the data
@@ -23,8 +21,8 @@
         $title = $row['title'];
         $description = $row['description'];
         $price = $row['price'];
-        $CurrentImage = $row['imageName'];
-        $Current_category = $row['categoryId'];
+        $currentImage = $row['imageName'];
+        $current_category = $row['categoryId'];
         $featured = $row['featured'];
         $active = $row['active'];
     }
@@ -32,6 +30,9 @@
 
     ?>
 
+<div class="max-w-8xl">
+    <h1 class=" text-4xl ml-10 font-extrabold">Update Products</h1><br><br>
+    
     <form action="" method="POST" enctype="multipart/form-data">
         <table class="w-[30%] ml-20">
 
@@ -61,13 +62,13 @@
                 <td>
                     <?php
                     // Check whether we have an image or not 
-                    if ($CurrentImage == "") {
+                    if ($currentImage == "") {
                         // We do not have an image. Display an error message
                         echo "<div class='text-red-500 uppercase'> Image not added.</div>";
                     } else {
                         // We have an image, display the image 
                     ?>
-                        <img src="./images/goods<?php echo htmlspecialchars($CurrentImage); ?> " width="150px">
+                        <img src="./images/goods<?php echo htmlspecialchars($currentImage); ?> " width="150px">
                     <?php
                     }
                     ?>
@@ -81,44 +82,44 @@
                 </td>
             </tr>
 
+
             <tr>
-                <td>Category</td>
+                <td>Category:</td>
                 <td>
                     <select name="category">
 
-                    <?php 
-                    //query to get active categories
-                    $sql = "SELECT * FROM tbl_category WHERE active='?'";
-                    $stmt = $conn->prepare($sql);
-                    $active = 'yes';
-                    $stmt->bind_param('s',$active);
-                    $stmt->execute();
-                    $res = $stmt->get_result();
-                    //Count rows
+                        <?php
+                        // Query to get active categories
+                        $sql = "SELECT * FROM tbl_category WHERE active='yes'";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
+                        $res = $stmt->get_result();
 
-                    $count = $res->num_rows();
+                        // Count rows
+                        $count = $res->num_rows;
 
-                    //Check whether category available or not
-                    if($count>0){
-                        //Category available
-                        while($row=mysqli_fetch_assoc($res)){
-                            $Category_title=$row['title'];
-                            $Category_id = $row['id'];
+                        // Check whether category is available or not
+                        if ($count > 0) {
+                            // Category available
+                            while ($row = mysqli_fetch_assoc($res)) {
+                                $category_title = $row['title'];
+                                $category_id = $row['id'];
 
-                            //echo "<option value='$Category_id;'>$Category_title;</option>"
-                            ?>
-                            <option <?php if($Current_category==$Category_id){echo "selected";}?> value="<?php echo $Category_id;?>"><?php echo $Category_title;?></option>
+                                ?>
+                                <option <?php if ($current_category == $category_id) {
+                                                echo "selected";
+                                            } ?> value="<?php echo $category_id; ?>"><?php echo $category_title; ?></option>
                             <?php
+                            }
+                        } else {
+                            // Category not available
+                            echo "<option value='0'>Category not available.</option>";
                         }
-                    }else{
-                        //Category not available
-                        echo "<option value='0'>Category not available.</option>";
-                    }
-                    ?>
-                          
+                        ?>
+
                     </select>
                 </td>
-            </tr>
+            </tr>           
 
             <tr>
                 <td>Featured:</td>
@@ -148,17 +149,15 @@
             <tr>
                 <td>
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <input type="hidden" name="currentImage" value="<?php echo $CurrentImage; ?>">
+                    <input type="hidden" name="currentImage" value="<?php echo $currentImage; ?>">
                     <input type="submit" name="submit" value="Update Products" class="bg-project-bg-2 p-4 rounded-xl mt-3 hover:bg-blue-900 text-white">
                 </td>
             </tr>
 
 
         </table>
-</div><br><br>
-</form>
 
-<?php
+        <?php
 if (isset($_POST['submit'])) {
 
     // echo 'button clicked';
@@ -167,7 +166,7 @@ if (isset($_POST['submit'])) {
     $title = $_POST['title'];
     $price = $_POST['price'];
     $description = $_POST['description'];
-    $CurrentImage = $_POST['currentImage'];
+    $currentImage = $_POST['currentImage'];
     $featured = $_POST['featured'];
     $active = $_POST['active'];
 
@@ -229,10 +228,10 @@ if (isset($_POST['submit'])) {
             //3.Remove the image if new image is uploaded and current image exist
             //B.remove current image if available 
 
-            if ($CurrentImage !== "") {
+            if ($currentImage !== "") {
                 //Current image is available
                 //Remove the image 
-                $Remove_path = "./images/goods" . $CurrentImage;
+                $Remove_path = "./images/goods" . $currentImage;
 
                 $Remove = unlink($Remove_path);
 
@@ -248,41 +247,48 @@ if (isset($_POST['submit'])) {
                 }
             }
         } else {
-            $imageName = $CurrentImage;
+            $imageName = $currentImage;
         }
     } else {
-        $imageName = $CurrentImage;
+        $imageName = $currentImage;
     }
 
-    //4.Update the food in database
-
+    // 4. Update the product in the database
     $sql2 = "UPDATE tbl_products SET 
         title = ?,
         price = ?,
         description = ?,
         imageName= ?,
         featured = ?,
-        active = ?
-        WHERE id = ?";
+        active = ?,
+        categoryId = ?
+        WHERE id = ? ";
+         // Add categoryId to the query
 
     $stmt2 = $conn->prepare($sql2);
-    $stmt2->bind_param("sdssssi", $title, $price,$description, $imageName, $featured, $active, $id);
+   $stmt2->bind_param("sdssssii", $title, $price, $description, $imageName, $featured, $active, $current_category, $id);
+
     $stmt2->execute();
     $res2 = $stmt2->get_result();
 
-    // Check whether the query is executed or not 
+    // Check whether the query is executed or not
     if ($res2 === false) {
-        // Query executed and menu updated 
-        $_SESSION['updated'] = "<div class='text-green-500 uppercase'>products updated successfully.</div>";
+        // Query executed and product updated
+        $_SESSION['updated'] = "<div class='text-green-500 uppercase'>Product updated successfully.</div>";
         // Redirect
         header('location:manage-products.php');
     } else {
         // Failed to update
-        $_SESSION['n-u'] = "<div class='text-red-500 uppercase'>Failed to update products.</div>";
+        $_SESSION['n-u'] = "<div class='text-red-500 uppercase'>Failed to update product.</div>";
         // Redirect
         header('location:manage-products.php');
     }
 }
 ?>
 
-<?php include('./partials/footer.php') ?>
+</div><br><br>
+</form>
+
+
+
+<?php include('./partials/footer.php'); ?>
