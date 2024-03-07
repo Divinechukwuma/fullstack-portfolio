@@ -747,6 +747,10 @@ video {
   width: 30%;
 }
 
+.w-\[50\%\] {
+  width: 50%;
+}
+
 .w-\[60\%\] {
   width: 60%;
 }
@@ -1360,6 +1364,10 @@ video {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:w-\[25\%\] {
+    width: 25%;
   }
 
   .md\:py-20 {

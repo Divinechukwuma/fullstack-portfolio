@@ -10,6 +10,23 @@
 
   </div>
 
+  <!-- || CATEGORY-->
+
+  <section>
+
+  <div class="max-w-8xl bg-font-color p-5 my-10">
+    <ul class="flex flex-wrap text-center list-none">
+      <li class="md:w-[25%] w-[50%] "><img src="./productimages/freestocks-_3Q3tsJ01nc-unsplash.jpg" alt=""></li>
+      <li class="md:w-[25%] w-[50%]"><img src="./productimages/image (8).jpg" alt=""></li>
+      <li class="md:w-[25%]  w-[50%]"><img src="./productimages/image (8).jpg" alt=""></li>
+      <li class="md:w-[25%] w-[50%]"><img src="./productimages/sha (4).jfif" alt=""></li>
+    </ul>
+  </div>
+
+  </section>
+
+  
+
 </section>
 
 <?php include ('./partials/footer.php') ?>
