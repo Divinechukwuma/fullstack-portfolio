@@ -16,7 +16,7 @@
   <!-- <script src="./javascript/slider.js" defer></script> -->
 </head>
 
-<body class=" bg-font-color-hover">
+<body class=" bg-font-color-hover ">
   <header class="bg-project-bg text-white sticky top-0 z-10">
     <section class="max-w-8xl mx-auto p-4 flex justify-between items-center">
       <h1 class="text-3xl font-medium">

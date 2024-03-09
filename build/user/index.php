@@ -41,7 +41,7 @@
 
   <!--|| GADGETS-->
 
-  <div class="bg-font-color ">
+  <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Gadgets</h1>
     <ul class="list-none grid grid-cols-1 items-center">
 
@@ -111,7 +111,7 @@
 
   <!--|| CLOTHES-->
 
-  <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
+  <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Clothes</h1>
     <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
 
@@ -178,7 +178,7 @@
 
   <!--|| Electronics-->
 
-  <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
+  <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Electronics</h1>
     <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
 
@@ -245,7 +245,7 @@
 
   <!--|| APPLIANCES-->
 
-  <div class="bg-font-color p-2 md:mx-[30rem] mx-10 my-10">
+  <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Appliances</h1>
     <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
 
@@ -319,7 +319,7 @@
     </div>
   </section>
 
-  <div class="bg-font-color p-2 md:ml-[10rem] mx-10 my-10 justify-center">
+  <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Available for sale</h1>
     <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap flex-row items-center gap-8">
 
