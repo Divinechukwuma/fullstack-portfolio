@@ -86,14 +86,14 @@ if (isset($_POST['submit'])) {
         $imageName = $_FILES['image']['name'];
 
         //File type validation
-        $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'svg','jfif'];
+        $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'svg','jfif','JPG'];
         $ext = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
 
         if (!in_array($ext, $allowedExtensions)) {
             //Invalid file type
             //Handle accordingly (show error message)
 
-            echo "Invalid file type. Allowed types: 'jpg','jpeg','png','gif','svg','jfif'";
+            echo "Invalid file type. Allowed types: 'jpg','jpeg','png','gif','svg','jfif','JPG'";
         } else {
 
             //Image file limit
