@@ -43,7 +43,7 @@
 
   <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Gadgets</h1>
-    <ul class="list-none grid grid-cols-1 items-center">
+    <ul class="list-none flex flex-wrap items-center ">
 
       <?php
 

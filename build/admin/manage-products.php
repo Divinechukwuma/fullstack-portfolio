@@ -1,19 +1,16 @@
-<?php include '../admin/partials/header.php'; ?><br><br>
+<?php include '../admin/partials/header.php'; ?>
 
 <?php
 if (isset($_SESSION['add'])) {
     echo $_SESSION['add'];
     unset($_SESSION['add']);
 }
-
 ?>
-
 <?php
 if (isset($_SESSION['delete'])) {
     echo $_SESSION['delete'];
     unset($_SESSION['delete']);
 }
-
 ?>
 
 <?php
@@ -21,27 +18,22 @@ if (isset($_SESSION['del'])) {
     echo $_SESSION['del'];
     unset($_SESSION['del']);
 }
-
 if (isset($_SESSION['up'])) {
     echo $_SESSION['up'];
     unset($_SESSION['up']);
 }
-
-
 if (isset($_SESSION['updated'])) {
     echo $_SESSION['updated'];
     unset($_SESSION['updated']);
 }
-
 if (isset($_SESSION['n-u'])) {
     echo $_SESSION['n-u'];
     unset($_SESSION['n-u']);
 }
-
 ?>
 
 
-<div class="my-10">
+<div class="my-20">
     <a class="  p-6  rounded-xl  bg-project-bg-2 hover:bg-blue-900 text-font-color m-10" href="add-products.php"> Add Products</a>
 
 
