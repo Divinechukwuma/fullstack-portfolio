@@ -10,8 +10,8 @@
 
 <!-- || CATEGORY-->
 
-<section class=" w-[80%] my-10 mx-auto">
-  <div class="grid md:grid-rows-2 grid-flow-col gap-4 grid-rows-4">
+<section class=" w-[80%] my-10 mx-auto ">
+  <div class="grid md:grid-rows-2 grid-flow-col  gap-2 grid-rows-4 ">
 
     <?php
 
@@ -30,7 +30,7 @@
 
     ?>
 
-        <div class="w-[300px] h-[300px] md:w-[500px] md:[500px] place-items-center">
+        <div class="w-[300px] h-[300px]  my-10 place-items-center">
           <?php
           if ($imageName == "") {
             //Image not available
@@ -41,7 +41,7 @@
 
             if (file_exists($imagePath)) {
           ?>
-              <img src="<?php echo $imagePath; ?>" class="rounded-xl my-10" alt="">
+              <img src="<?php echo $imagePath; ?>" class="rounded-xl w-[500px] h-[300px]" alt="">
           <?php
             } else {
               echo "Image not found";
