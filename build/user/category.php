@@ -48,7 +48,7 @@
             }
           }
           ?>
-          <div class="absolute inset-0 flex items-center justify-center text-black text-3xl font-extrabold bg-white hover:underline bg-opacity-50 transition-opacity opacity-0 hover:opacity-100">
+          <div class="absolute inset-0 flex items-center justify-center text-white text-3xl font-extrabold bg-black hover:underline bg-opacity-50 transition-opacity opacity-0 hover:opacity-100">
             <a href="#" class="text-decoration-none"><?php echo htmlspecialchars($title) ?></a>
           </div>
         </div>
