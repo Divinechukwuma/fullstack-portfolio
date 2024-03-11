@@ -283,7 +283,7 @@ if (isset($_GET['id'])) {
         }
         ?>
 
-</div><br><br>
+</div class="my-10">
 </form>
 
 

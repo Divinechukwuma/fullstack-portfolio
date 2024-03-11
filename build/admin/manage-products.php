@@ -92,7 +92,7 @@ if (isset($_SESSION['n-u'])) {
                                     } else {
                                         // We have an image, display the image 
                                     ?>
-                                        <img src="./images/goods<?php echo htmlspecialchars($imageName); ?> " width="150px">
+                                        <img src="./images/goods/ echo htmlspecialchars($imageName); ?> " width="150px">
                                     <?php
                                     }
                                     ?>
