@@ -63,6 +63,7 @@
                             while ($row = mysqli_fetch_assoc($res)) {
                                 $title = $row['title'];
                                 $id = $row['id'];
+
                                 echo "<option value='" . $id . "'>" . $title . "</option>";
                             }
                         } else {
@@ -187,7 +188,7 @@
             //sql query to insert the data into the data base
             $sql = "INSERT INTO tbl_products (title,price,description,imageName,categoryId,featured,active) VALUES(?,?,?,?,?,?,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param('sdssdss', $title, $price, $description, $categoryId, $imageName, $featured, $active);
+            $stmt->bind_param('sdssdss', $title, $price, $description, $imageName, $categoryId, $featured, $active);
             $stmt->execute();
 
             if ($stmt->affected_rows > 0) {
@@ -206,7 +207,7 @@
 
         ?>
 
-</div class="my-10">
+</div><br><br>
 </form>
 
 <?php include('./partials/footer.php'); ?>

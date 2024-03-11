@@ -91,38 +91,37 @@ if (isset($_GET['id'])) {
             <tr>
                 <td>Category</td>
                 <td>
-                    <select name="category">
+                    <select name="categoryId">
+                        <?php
+                        // Query to get active categories
+                        $sql = "SELECT * FROM tbl_category WHERE active='yes'";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
+                        $res = $stmt->get_result();
 
-                    <?php 
-                    // Query to get active categories
-                    $sql = "SELECT * FROM tbl_category WHERE active='yes'";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->execute();
-                    $res = $stmt->get_result();
+                        // Count rows
+                        $count = $res->num_rows;
 
-                    // Count rows
-                    $count = $res->num_rows;
-                    //Check whether category available or not
-                    if($count>0){
-                        //Category available
-                        while($row = mysqli_fetch_assoc($res)){
-                            $category_title=$row['title'];
-                            $category_id = $row['id'];
+                        // Check whether category is available or not
+                        if ($count > 0) {
+                            // Category available
+                            while ($row = mysqli_fetch_assoc($res)) {
+                                $title = $row['title'];
+                                $id = $row['id'];
 
-                            //echo "<option value='$category_id;'>$category_title;</option>"
-                            ?>
-                            <option <?php if($current_category==$category_id){echo "selected";}?> value="<?php echo $category_id;?>"><?php echo $category_title;?></option>
-                            <?php
+                                echo "<option value='" . $id . "'>" . $title . "</option>";
+                            }
+                        } else {
+                            // No category found
+                            echo "<option value='0'>No category found</option>";
                         }
-                    }else{
-                        //Category not available
-                        echo "<option value='0'>Category not available.</option>";
-                    }
-                    ?>
-                          
+                        ?>
+
+
                     </select>
                 </td>
             </tr>
+
 
 
             <tr>
@@ -142,14 +141,16 @@ if (isset($_GET['id'])) {
                 </td>
 
             </tr>
-
-            <tr>
+            
+            <?php 
+            echo" <tr>
                 <td>
-                    <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <input type="hidden" name="currentImage" value="<?php echo $currentImage; ?>">
-                    <input type="submit" name="submit" value="Update Products" class="bg-project-bg-2 p-4 rounded-xl mt-3 hover:bg-blue-900 text-white">
+                    <input type='hidden'name='id' value=' $id'>
+                    <input type='hidden' name='currentImage' value=' $currentImage'>
+                    <input type='submit' name='submit' value='Update Products' class='bg-project-bg-2 p-4 rounded-xl mt-3 hover:bg-blue-900 text-white'>
                 </td>
-            </tr>
+            </tr>"
+            ?>
 
 
         </table>
@@ -228,7 +229,7 @@ if (isset($_GET['id'])) {
                     if ($currentImage !== "") {
                         //Current image is available
                         //Remove the image 
-                        $Remove_path = "./images/goods" . $currentImage;
+                        $Remove_path = "./images/goods/" . $currentImage;
 
                         $Remove = unlink($Remove_path);
 

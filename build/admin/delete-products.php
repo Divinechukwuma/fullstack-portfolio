@@ -14,17 +14,23 @@ if (isset($_GET['id']) && isset($_GET['imageName'])) {
 
     if ($imageName != "") {
 
-        $path = "./images/goods" . $imageName;
-
-        $remove = unlink($path);
-
-        if ($remove == true) {
-
-            $_SESSION['delete'] = "<div class='text-green-500 uppercase'>Image remove successfully.</div>";
-
-            header('location: manage-products.php');
-            //Stop the process of deleted food image
-            die();
+        $dir = "./images/goods/" . $imageName;
+        
+        if (file_exists($dir)) {
+            $remove = unlink($dir);
+            if ($remove) {
+                // File successfully deleted
+                $_SESSION['delete'] = "<div class='text-green-500 uppercase'>Image removed successfully.</div>";
+                header('location: manage-products.php');
+                // Stop the process after deleting the image
+                die();
+            } else {
+                // Error in deleting the file
+                echo "Error deleting file.";
+            }
+        } else {
+            // File does not exist
+            echo "File does not exist.";
         }
     }
 
@@ -32,9 +38,9 @@ if (isset($_GET['id']) && isset($_GET['imageName'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
     $stmt->execute();
-   
 
-    if ($stmt->affected_rows > 0 ) {
+
+    if ($stmt->affected_rows > 0) {
 
         //Products deleted successfully 
         $_SESSION['del'] = "<div class='text-green-500 uppercas  '>products deleted successfully</div>";
