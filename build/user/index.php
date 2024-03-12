@@ -43,7 +43,7 @@
 
   <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Gadgets</h1>
-    <ul class="grid grid-cols-1 md:grid-flow-row gap-4">
+    <ul class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4">
 
       <?php
 
@@ -69,7 +69,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-1 px-10  rounded-3xl shadow-xl w-[50%] mx-auto my-5">
+          <li class="bg-font-color-hover py-2 px-10  rounded-3xl shadow-xl w-[300px] mx-auto my-5">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -113,7 +113,7 @@
 
   <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Clothes</h1>
-    <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
+    <ul class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4">
 
       <?php
 
@@ -139,7 +139,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-1 px-10 rounded-3xl shadow-xl w-[50%] mx-auto my-5">
+            <li class="bg-font-color-hover py-2 px-10  rounded-3xl shadow-xl w-[300px] mx-auto my-5">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -180,7 +180,7 @@
 
   <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Electronics</h1>
-    <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
+    <ul class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4">
 
       <?php
 
@@ -206,7 +206,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-           <li class="bg-font-color-hover py-1 px-10 rounded-3xl shadow-xl w-[50%] mx-auto my-5">
+             <li class="bg-font-color-hover py-2 px-10  rounded-3xl shadow-xl w-[300px] mx-auto my-5">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -247,7 +247,7 @@
 
   <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Appliances</h1>
-    <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap items-center gap-8">
+    <ul class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4">
 
       <?php
 
@@ -273,7 +273,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-           <li class="bg-font-color-hover py-1 px-10 rounded-3xl shadow-xl w-[50%] mx-auto my-5">
+          <li class="bg-font-color-hover py-2 px-10  rounded-3xl shadow-xl w-[300px] mx-auto my-5">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -321,7 +321,7 @@
 
   <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Available for sale</h1>
-    <ul class="list-none ml-10 mx-auto my-12 flex flex-wrap flex-row items-center gap-8">
+    <ul class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4">
 
       <?php
 
@@ -340,7 +340,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-1 px-10 rounded-3xl shadow-xl w-[50%] mx-auto my-5 ">
+          <li class="bg-font-color-hover py-2 px-10  rounded-3xl shadow-xl w-[300px] mx-auto my-5">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php

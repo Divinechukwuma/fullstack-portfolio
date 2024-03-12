@@ -1,27 +1,23 @@
-<footer class="bg-unique-black text-white sticky  z-10 py-2">
+<footer class="bg-unique-black text-white sticky  z-10 py-2 ">
     <section class="max-w-8xl mx-auto text-center">
         <h1 class="text-3xl font-medium">
             <a href="#hero"><span class="text-yellow-300 font-serif">🌏Divine-</span>Online-Shop
             </a>
         </h1>
-
-        <nav class="hidden md:block space-x-3 text-xl" aria-label="main">
-            <a href="#place" class="hover:text-font-color-hover  font-sans">Home</a>
-            <a href="#testimonials" class="hover:text-font-color-hover font-sans">Category</a>
-            <a href="#testimonials" class="hover:text-font-color-hover font-sans">Cart 🛒</a>
-            <a href="#testimonials" class="hover:text-font-color-hover font-sans">Order</a>
+  
+        <nav class=" space-x-3 text-xl " aria-label="main">
             <a href="#contact" class="hover:text-font-color-hover font-sans">Contact Us </a>
-            <a href="#contact" class="hover:text-font-color-hover font-sans md:hidden sm:block">🔍search </a>
+            <a href="#contact" class="hover:text-font-color-hover font-sans">About Us </a>
         </nav>
         <h1 class="text-extrabold text-3xl">Follow us on</h1>
         <div class="flex justify-center py-1">
-            <img src="../user/productimages/icons (1).png" alt="" class="max-h-10 max-w-10 p-2">
-            <img src="../user/productimages/icons (2).png" alt="" class="max-h-10 max-w-10 p-2">
-            <img src="../user/productimages/icons (3).png" alt="" class="max-h-10 max-w-10 p-2">
-            <img src="../user/productimages/icons (4).png" alt="" class="max-h-10 max-w-10 p-2">
+            <a href="https://github.com/Divinechukwuma"><img src="productimages/icons8-github-64.png" alt="" class="max-h-10 max-w-10 p-2"></a>
+            <a href="https://m.facebook.com/profile.php/?id=100074787875914&name=xhp_nt__fb__action__open_user"><img src="../user/productimages/icons (2).png" alt="" class="max-h-10 max-w-10 p-2"></a>
+            <a href="https://twitter.com/divinechuk22549"><img src="../user/productimages/icons (3).png" alt="" class="max-h-10 max-w-10 p-2"></a>
+            <a href="https://www.linkedin.com/me?trk=p_mwlite_feed_updates-secondary_nav"><img src="productimages/icons8-linkedin-96.png" alt="" class="max-h-10 max-w-10 p-2"></a>
         </div>
         <h1 class="text-extrabold text-3xl">payment method</h1>
-        <div class="flex justify-center py-1">
+        <div class="flex justify-center py-1 ">
             <img src="../user/productimages/americanexpress.png" alt="" class="max-h-10 max-w-10 p-2">
             <img src="../user/productimages/egold.png" alt="" class="max-h-10 max-w-10 p-2">
             <img src="../user/productimages/paypal.png" alt="" class="max-h-10 max-w-10 p-2">
