@@ -32,9 +32,9 @@
       <nav class="hidden md:block space-x-3 text-xl" aria-label="main">
         <a href="index.php" class="hover:text-font-color-hover  font-sans">Home</a>
         <a href="category.php" class="hover:text-font-color-hover font-sans scroll-smooth">Category</a>
-        <a href="#testimonials" class="hover:text-font-color-hover font-sans">Cart 🛒</a>
-        <a href="#testimonials" class="hover:text-font-color-hover font-sans">Order</a>
-        <a href="#contact" class="hover:text-font-color-hover font-sans">Contact Us </a>
+        <a href="cart.php" class="hover:text-font-color-hover font-sans">Cart 🛒</a>
+        <a href="order.php" class="hover:text-font-color-hover font-sans">Order</a>
+        <a href="contact.php" class="hover:text-font-color-hover font-sans">Contact Us </a>
       </nav>
       <!-- <section
           id="mobile-menu"

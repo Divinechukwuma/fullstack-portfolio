@@ -12,8 +12,12 @@ if (isset($_GET['categoryId'])) {
     $stmt->execute();
     $res = $stmt->get_result();
 
-    if ($row = $res->fetch_assoc()) {
+    $count = $res->num_rows;
+
+    if ( $count >0 ) {
         //  Get the title
+        $row = $res->fetch_assoc(); // Fetch the row
+        
         $categoryTitle = $row['title'];
     } else {
         //Handle the case where no category is found with the given id
@@ -32,27 +36,27 @@ if (isset($_GET['categoryId'])) {
 <section class="w-[80%] my-10 mx-auto" >
 
     <div class="bg-project-bg-2 md:md:block w-full font-sans text-center text-white p-10  ">
-        <h1 class="text-center"><a href=""> <?php echo htmlspecialchars($categoryTitle) ?></a></h1>
+        <h1 class="text-center  text-3xl font-extrabold"><a href=""> Products Of <?php echo htmlspecialchars($categoryTitle) ?></a></h1>
     </div>
 </section>
 <!-- FOOD SEARCH Section Ends Here -->
 
 <!-- FOOD MENU Section Starts Here -->
-<!-- <section class="food-menu">
+ <section class="food-menu">
     <div class="container">
         <h2 class="text-center">Products</h2>
         <?php
         // Create sql query to get foods based on the selected category
-        $sql2 = "SELECT * FROM tbl_products WHERE categoryid = ?";
+        $sql2 = "SELECT * FROM tbl_productsg WHERE categoryid = ?";
         $stmt2 = $conn->prepare($sql2);
         $stmt2->bind_param('d', $CategoryId);
         $stmt2->execute();
         $res2 = $stmt2->get_result();
 
-        $count = $res2->num_rows();
+        $count2 = $res2->num_rows;
 
         // Check whether food is available or not
-        if ($count > 0) {
+        if ($count2 > 0) {
             // Food is available
             while ($row2 = $res2->fetch_assoc()) {
                 $id = $row2['id'];
@@ -96,11 +100,11 @@ if (isset($_GET['categoryId'])) {
         ?>
     </div>
 </section>
- FOOD MENU Section Ends Here 
+ <!--FOOD MENU Section Ends Here -->
 
 <div class="clearfix"></div>
 </div>
-</section> -->
+</section> 
 
 <!-- fOOD Menu Section Ends Here -->
 
