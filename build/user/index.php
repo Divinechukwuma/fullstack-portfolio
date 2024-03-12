@@ -98,7 +98,7 @@
               <?php echo htmlspecialchars($description) ?>
             </p>
           
-              <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
+              <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryId=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
 
           
           </li>
@@ -167,7 +167,7 @@
             <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
               <?php echo htmlspecialchars($description) ?>
             </p>
-            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
+            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryId=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
           </li>
 
       <?php
@@ -234,7 +234,7 @@
             <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
               <?php echo htmlspecialchars($description) ?>
             </p>
-            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
+            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryId=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
           </li>
 
       <?php
@@ -301,7 +301,7 @@
             <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
               <?php echo htmlspecialchars($description) ?>
             </p>
-            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
+            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryId=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
           </li>
 
       <?php
