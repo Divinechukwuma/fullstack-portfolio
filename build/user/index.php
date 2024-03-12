@@ -43,7 +43,7 @@
 
   <div class="bg-font-color w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Gadgets</h1>
-    <ul class="list-none flex flex-wrap items-center ">
+    <ul class="grid grid-cols-1 md:grid-flow-row gap-4">
 
       <?php
 
@@ -69,7 +69,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-1 px-10  rounded-3xl shadow-xl w-[20%] ">
+          <li class="bg-font-color-hover py-1 px-10  rounded-3xl shadow-xl w-[50%] mx-auto my-5">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -139,7 +139,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
+          <li class="bg-font-color-hover py-1 px-10 rounded-3xl shadow-xl w-[50%] mx-auto my-5">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -206,7 +206,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
+           <li class="bg-font-color-hover py-1 px-10 rounded-3xl shadow-xl w-[50%] mx-auto my-5">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -273,7 +273,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-1 px-4 rounded-3xl shadow-xl w-[20%]">
+           <li class="bg-font-color-hover py-1 px-10 rounded-3xl shadow-xl w-[50%] mx-auto my-5">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -340,7 +340,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-1 px-10 rounded-3xl shadow-xl w-[20%] ">
+          <li class="bg-font-color-hover py-1 px-10 rounded-3xl shadow-xl w-[50%] mx-auto my-5 ">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php

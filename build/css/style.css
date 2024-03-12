@@ -646,6 +646,11 @@ video {
   margin-bottom: 5rem;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -743,12 +748,12 @@ video {
   min-height: 100vh;
 }
 
-.w-\[20\%\] {
-  width: 20%;
-}
-
 .w-\[30\%\] {
   width: 30%;
+}
+
+.w-\[50\%\] {
+  width: 50%;
 }
 
 .w-\[60\%\] {
@@ -970,11 +975,6 @@ video {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .py-1 {
@@ -1392,6 +1392,10 @@ video {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:grid-flow-row {
+    grid-auto-flow: row;
   }
 
   .md\:grid-cols-2 {
