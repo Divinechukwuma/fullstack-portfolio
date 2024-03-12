@@ -46,6 +46,7 @@
     <ul class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4">
 
       <?php
+      
 
       //Sql to get the data from the database
       $sql = "SELECT * FROM tbl_products WHERE active=? AND featured=? LIMIT 4";
@@ -69,7 +70,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-2 px-10  rounded-3xl shadow-xl w-[300px] mx-auto my-5">
+          <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -96,10 +97,10 @@
             <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
               <?php echo htmlspecialchars($description) ?>
             </p>
-            <div class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
-              <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
+          
+              <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
 
-            </div>
+          
           </li>
 
       <?php
@@ -139,7 +140,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-            <li class="bg-font-color-hover py-2 px-10  rounded-3xl shadow-xl w-[300px] mx-auto my-5">
+          <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -166,7 +167,7 @@
             <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
               <?php echo htmlspecialchars($description) ?>
             </p>
-            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
+            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
           </li>
 
       <?php
@@ -206,7 +207,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-             <li class="bg-font-color-hover py-2 px-10  rounded-3xl shadow-xl w-[300px] mx-auto my-5">
+          <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -233,7 +234,7 @@
             <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
               <?php echo htmlspecialchars($description) ?>
             </p>
-            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
+            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
           </li>
 
       <?php
@@ -273,7 +274,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-2 px-10  rounded-3xl shadow-xl w-[300px] mx-auto my-5">
+          <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -300,7 +301,7 @@
             <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
               <?php echo htmlspecialchars($description) ?>
             </p>
-            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
+            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryid=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
           </li>
 
       <?php
@@ -340,7 +341,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-2 px-10  rounded-3xl shadow-xl w-[300px] mx-auto my-5">
+          <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
             <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
             <div>
               <?php
@@ -367,7 +368,11 @@
             <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
               <?php echo htmlspecialchars($description) ?>
             </p>
+            <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="cart.php?categoryid=<?php echo htmlspecialchars($id); ?>"> Cart 🛒 </a> </button>
+
           </li>
+          
+          
 
       <?php
         }

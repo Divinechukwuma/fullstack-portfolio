@@ -35,7 +35,6 @@
         <a href="#testimonials" class="hover:text-font-color-hover font-sans">Cart 🛒</a>
         <a href="#testimonials" class="hover:text-font-color-hover font-sans">Order</a>
         <a href="#contact" class="hover:text-font-color-hover font-sans">Contact Us </a>
-        <a href="#contact" class="hover:text-font-color-hover font-sans md:hidden sm:block">🔍search </a>
       </nav>
       <!-- <section
           id="mobile-menu"
