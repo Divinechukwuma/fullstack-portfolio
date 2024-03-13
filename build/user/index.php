@@ -321,7 +321,8 @@
           $categoryId = $row['categoryId'];
       ?>
           <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
-            <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?> ᐳ</p>
+            <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?>
+          </p>
             <div>
               <?php
               if ($imageName == "") {
