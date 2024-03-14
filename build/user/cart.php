@@ -28,7 +28,7 @@
           $categoryId = $row['categoryId'];
       ?>
           <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[300px]  my-5 lg:[400px]">
-            <p class="text-project-bg font-extrabold md:ml-[8rem] mb-5"> $<?php echo htmlspecialchars($price) ?>
+          <p class="text-unique-black font-extrabold  mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt="" class="inline"><?php echo htmlspecialchars($price) ?>
           </p>
             <div>
               <?php

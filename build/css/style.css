@@ -775,6 +775,22 @@ video {
   width: 300px;
 }
 
+.w-\[00px\] {
+  width: 00px;
+}
+
+.w-\[50px\] {
+  width: 50px;
+}
+
+.w-\[250px\] {
+  width: 250px;
+}
+
+.w-\[10px\] {
+  width: 10px;
+}
+
 .max-w-10 {
   max-width: 2.5rem;
 }
@@ -1126,6 +1142,11 @@ video {
 .text-yellow-600 {
   --tw-text-opacity: 1;
   color: rgb(202 138 4 / var(--tw-text-opacity));
+}
+
+.text-unique-black {
+  --tw-text-opacity: 1;
+  color: rgb(13 13 13 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
