@@ -68,7 +68,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           
       ?>
-          <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
+          <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
             <div>
               <?php
               if ($imageName == "") {
@@ -132,7 +132,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           
       ?>
-          <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
+          <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
             <div>
               <?php
               if ($imageName == "") {
@@ -194,7 +194,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           
       ?>
-          <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
+          <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
             <div>
               <?php
               if ($imageName == "") {
@@ -256,7 +256,7 @@
           $imageName = $row['imageName']; // Fixed variable name
          
       ?>
-          <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
+          <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
            
             <div>
               <?php
@@ -320,7 +320,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class="bg-font-color-hover py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
+          <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
             <p class="text-unique-black font-extrabold  mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt="" class="inline"><?php echo htmlspecialchars($price) ?>
           </p>
             <div>

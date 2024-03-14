@@ -73,5 +73,29 @@
             >
           </nav>
         </section> -->
+
+      <?php
+
+   
+
+      if (isset($_GET['cartId'])) {
+        $cartId = $_GET['cartId'];
+
+        // Check if the cart session variable exists
+        if (isset($_SESSION['cart'])) {
+          // Append the new product ID to the existing cart
+          $_SESSION['cart'][] = $cartId;
+        } else {
+          // Create a new cart session variable
+          $_SESSION['cart'] = array($cartId);
+        }
+      }
+
+      // Your existing code to display products goes here
+      ?>
+
+      <!-- Product listing HTML code -->
+
+
     </section>
   </header>
