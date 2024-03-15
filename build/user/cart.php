@@ -10,6 +10,7 @@ include('./partials/header.php');
 
     <?php
 
+    // Check if a product should be added to the cart
     if (isset($_GET['cartId'])) {
       $cartId = $_GET['cartId'];
 
@@ -26,7 +27,20 @@ include('./partials/header.php');
       }
     }
 
-    // Display the cart items
+    // Function to remove item from cart
+    function removeFromCart($productId)
+    {
+      if (isset($_SESSION['cart'])) {
+        // Find the index of the product ID in the cart array
+        $index = array_search($productId, $_SESSION['cart']);
+        // If found, remove it from the cart
+        if ($index !== false) {
+          unset($_SESSION['cart'][$index]);
+        }
+      }
+    }
+
+    // Check if the cart is not empty and display cart items
     if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
       $cartIds = $_SESSION['cart'];
 
@@ -65,6 +79,10 @@ include('./partials/header.php');
             <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
               <?php echo htmlspecialchars($row['description']); ?>
             </p>
+            <form action="cart.php" method="POST">
+              <input type="hidden" name="removeCartId" value="<?php echo htmlspecialchars($cartId); ?>">
+              <button type="submit" name="removeFromCart" class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white">Remove From 🛒</button>
+            </form>
           </li>
     <?php
         }
@@ -75,8 +93,19 @@ include('./partials/header.php');
     }
 
     ?>
+
   </ul>
 </div>
 
+<?php
+// Check if the Remove from Cart button is clicked
+if (isset($_POST['removeFromCart']) && isset($_POST['removeCartId'])) {
+  // Call the removeFromCart function with the product ID to remove it from the cart
+  removeFromCart($_POST['removeCartId']);
+  // Redirect to the cart page to refresh the displayed items
+  header("Location: cart.php");
+  exit;
+}
 
-<?php include('./partials/footer.php'); ?>
+include('./partials/footer.php');
+?>

@@ -17,7 +17,7 @@
 
     // Sql query to fetch data from database
 
-    $sql = "SELECT * FROM tbl_category LIMIT 4";
+    $sql = "SELECT * FROM tbl_category LIMIT 6";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $res = $stmt->get_result();
