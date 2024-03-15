@@ -1,4 +1,5 @@
 <?php
+
 include('./partials/header.php');
 
 ?>
@@ -14,8 +15,11 @@ include('./partials/header.php');
 
       // Check if the cart session variable exists
       if (isset($_SESSION['cart'])) {
-        // Append the new product ID to the existing cart
-        $_SESSION['cart'][] = $cartId;
+        // Check if the product ID already exists in the cart
+        if (!in_array($cartId, $_SESSION['cart'])) {
+          // Append the new product ID to the existing cart
+          $_SESSION['cart'][] = $cartId;
+        }
       } else {
         // Create a new cart session variable
         $_SESSION['cart'] = array($cartId);

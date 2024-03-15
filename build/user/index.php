@@ -92,7 +92,7 @@
               <?php echo htmlspecialchars($title); ?>
             </h3>
             
-              <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"> <a href="category-products.php?categoryId=<?php echo htmlspecialchars($id); ?>"> see more </a> </button>
+              <button class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white"><a href="category-products.php?categoryId=<?php echo htmlspecialchars($id);?>" class="text-decoration-none"> see more </a> </button>
 
           
           </li>
