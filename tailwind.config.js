@@ -3,6 +3,19 @@ module.exports = {
   content: ["./build/**/*.{html,js,php}"],
   theme: {
     extend: {
+      keyframes:{
+        'open-menu':{
+          '0%':{transform:'scaleY(0)'}, 
+          '80%':{transform:'scaleY(1.2)'},
+          '100%':{transform:'scaleY(1)'},
+
+        },
+      },
+
+      animation:{
+        'open-menu':'open-menu 0.5 ease-in-out forwards',
+      },
+      
       colors: {
         'unique-black': '#0D0D0D',
         'font-color': '#F2F2F2',

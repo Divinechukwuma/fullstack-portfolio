@@ -12,4 +12,4 @@ const initApp =() => {
     mobileMenu.addEventListener('click',toggleMenu)
 }
 
-document.addEventListener('DOMContentLoaded',initApp)
+document.addEventListener('DOMContentLoaded',initApp) 

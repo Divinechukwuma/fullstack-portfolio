@@ -1,4 +1,4 @@
-<footer class="bg-unique-black text-white sticky  z-10 py-2 ">
+<footer class="bg-unique-black text-white sticky  py-2 " id="footer">
     <section class="max-w-8xl mx-auto text-center">
         <h1 class="text-3xl font-medium">
             <a href="#hero"><span class="text-yellow-300 font-serif">🌏Divine-</span>Online-Shop
@@ -40,7 +40,7 @@
 </footer>
 
 
-
+<script src="js/main.js"></script>
 <script>
     $('.responsive').slick({
         dots: true,

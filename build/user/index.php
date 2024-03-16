@@ -94,14 +94,14 @@
 
   <!-- Categories-->
 
-  <section class="w-[80%] my-10 mx-auto" id="products">
+  <section class="w-[80%] my-10 mx-auto" >
 
     <div class="bg-project-bg-2 md:md:block w-full font-sans text-center text-white p-5 ">
       <h1 class="text-center text-3xl font-extrabold">BUY And Order</h1>
     </div>
   </section>
 
-  <div class="bg-font-color w-[80%] my-10 mx-auto ">
+  <div class="bg-font-color w-[80%] my-10 mx-auto " id="products">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Available for sale</h1>
     <ul class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4">
 
