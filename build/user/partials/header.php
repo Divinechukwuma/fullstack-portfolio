@@ -34,7 +34,7 @@
         <a href="category.php" class="hover:text-font-color-hover font-sans scroll-smooth">Category</a>
         <a href="cart.php" class="hover:text-font-color-hover font-sans"> 🛒Cart </a>
         <a href="order.php" class="hover:text-font-color-hover font-sans">Order</a>
-        <a href="contact.php" class="hover:text-font-color-hover font-sans">Contact Us </a>
+
       </nav>
       <!-- <section
           id="mobile-menu"

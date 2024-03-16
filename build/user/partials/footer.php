@@ -6,8 +6,8 @@
         </h1>
   
         <nav class=" space-x-3 text-xl " aria-label="main">
-            <a href="#contact" class="hover:text-font-color-hover font-sans">Contact Us </a>
-            <a href="#contact" class="hover:text-font-color-hover font-sans">About Us </a>
+        <a href="contact.php" class="hover:text-font-color-hover font-sans">Contact Us </a>
+            <a href="about.php" class="hover:text-font-color-hover font-sans">About Us </a>
         </nav>
         <h1 class="text-extrabold text-3xl">Follow us on</h1>
         <div class="flex justify-center py-1">
