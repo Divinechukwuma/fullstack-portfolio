@@ -62,6 +62,11 @@
               >Products</a
             >
             <a
+              href="cart.php"
+              class="w-full text-center hover:opacity-90 py-6 text-white"
+              >Cart</a
+            >
+            <a
               href="order.php"
               class="w-full text-center hover:opacity-90 py-6 text-white"
               >Order</a

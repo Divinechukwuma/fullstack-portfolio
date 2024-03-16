@@ -62,8 +62,12 @@ include('./partials/header.php');
           $description = $row['description'];
     ?>
           <li class="= py-2 px-7 rounded-3xl shadow-xl w-[300px]  my-5 lg:[400px]">
-            <p class="text-unique-black font-extrabold  mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt="" class="inline"><?php echo htmlspecialchars($price); ?>
-            </p>
+            <p class="text-unique-black font-extrabold  mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt="" class="inline"><?php echo htmlspecialchars($price); ?> </p>
+            <form action="cart.php" method="POST" >
+              <input type="hidden" name="removeCartId" value="<?php echo htmlspecialchars($cartId); ?>">
+              <button type="submit" name="removeFromCart" class="border rounded-xl p-2 text-2xl text-white"><img src="./productimages/icons8-trash-24.png"  alt="" class="w-['50px']"></button>
+            </form>
+           
             <div>
               <?php
               $imagePath = "../admin/images/goods" . $row['imageName'];
@@ -82,10 +86,8 @@ include('./partials/header.php');
             <p class="text-xl sm:text-xl text-left mt-2 text-black before:font-serif before:absolute before:top-0 before:left-0 before:text-xl before:text-black before:opacity-25 before:transform before:translate-x-2 before:translate-y-2 after:font-serif after:absolute after:-bottom-20 after:right-0 after:text-2xl after:text-black after:opacity-25 after:transform after:-translate-x-2 after:-translate-y-2">
               <?php echo htmlspecialchars($description); ?>
             </p>
-            <form action="cart.php" method="POST">
-              <input type="hidden" name="removeCartId" value="<?php echo htmlspecialchars($cartId); ?>">
-              <button type="submit" name="removeFromCart" class="border rounded-xl bg-project-bg-2 p-2 text-2xl text-white">Remove From 🛒</button>
-            </form>
+           
+              <button type="submit" name="removeFromCart" class="border rounded-xl my-2 p-2 text-2xl text-white bg-project-bg-2"><a href="order.php?orderId=<?php echo htmlspecialchars($cartId) ?>">Order Here</a></button>
           </li>
     <?php
         }
