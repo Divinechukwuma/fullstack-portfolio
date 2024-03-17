@@ -1,6 +1,6 @@
 <?php include('./partials/header.php') ?>
 
-<section class="w-[80%] my-10 mx-auto" id="products">
+<section class="w-[80%] my-10 mx-auto" >
 
   <div class="bg-unique-black md:md:block w-full font-sans text-center text-black p-5 ">
     <input class=" bg-white p-3 rounded pl-10 w-[60%]" type="text" placeholder="Search For Products">
