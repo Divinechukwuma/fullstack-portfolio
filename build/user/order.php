@@ -29,7 +29,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
             // Your display code here
             ?>
               <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px] bg-font-color">
-                <p class="text-unique-black font-extrabold mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt="" class="inline"><?php echo htmlspecialchars($row['price']); ?></p>
+                <p class="text-unique-black font-extrabold mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt=""  class="inline"><?php echo htmlspecialchars($row['price']); ?></p>
                 <div>
                     <?php
                     $imagePath = "../admin/images/goods" . $row['imageName'];
@@ -70,6 +70,12 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
             <label for="name" class="block text-lg font-semibold text-black">Name:</label>
             <input type="text" id="name" name="name" class="mt-1 px-4 py-2 block w-full border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
         </div>
+
+          <div class="mb-4">
+            <label for="phone" class="block text-lg font-semibold text-black">Phone:</label>
+            <input type="text" id="phone" name="phone" class="mt-1 px-4 py-2 block w-full border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+        </div>
+
         <div class="mb-4">
             <label for="email" class="block text-lg font-semibold text-black">Email:</label>
             <input type="email" id="email" name="email" class="mt-1 px-4 py-2 block w-full border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
@@ -80,13 +86,10 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
             <textarea id="address" name="address" rows="4" class="mt-1 px-4 py-2 block w-full border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
         </div>
         <div class="mb-4">
-            <label for="email" class="block text-lg font-semibold text-black">Total</label>
-            <p  class="mt-1 px-4 py-2 block w-full border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-3xl font-bold" ><?php echo  htmlspecialchars($totalPrice) ?> </p>
+            <label for="Total" class="block text-lg font-semibold text-black">Total</label>
+            <p  class="mt-1 px-4 py-2 block w-full border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 text-3xl font-bold" name='total' ><?php echo  htmlspecialchars($totalPrice) ?> </p>
         </div>
-        <div class="mb-4">
-            <label for="phone" class="block text-lg font-semibold text-black">Phone:</label>
-            <input type="text" id="phone" name="phone" class="mt-1 px-4 py-2 block w-full border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-        </div>
+      
         <div class="col-span-2">
             <button type="submit" class="border rounded-xl bg-blue-500 p-2 text-2xl text-white">Place Order</button>
         </div>
@@ -94,8 +97,16 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
         <?php 
 
             if(isset($_POST['submit'])){
+               //Get the data from the form
+               $name = $_POST['name'];
+               $email = $_POST['email'];
+               $address = $_POST['address'];
+               $phone = $_POST['phone'];
+               $total = $_POST['total'];
 
                //Sql query to insert into the database
+
+                  $sql = "INSERT INTO tbl_order value='?,?,?,?,?'";
 
 
             }
