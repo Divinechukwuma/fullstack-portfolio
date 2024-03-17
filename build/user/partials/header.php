@@ -96,6 +96,19 @@
         }
       }
 
+      if (isset($_GET['orderId'])) {
+        $cartId = $_GET['orderId'];
+
+        // Check if the cart session variable exists
+        if (isset($_SESSION['order'])) {
+          // Append the new product ID to the existing cart
+          $_SESSION['order'][] = $orderId;
+        } else {
+          // Create a new cart session variable
+          $_SESSION['order'] = array($orderId);
+        }
+      }
+
       // Your existing code to display products goes here
       ?>
 

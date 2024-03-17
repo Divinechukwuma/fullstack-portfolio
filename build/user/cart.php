@@ -62,7 +62,9 @@ include('./partials/header.php');
           $description = $row['description'];
     ?>
          <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px] bg-font-color">
+          
             <p class="text-unique-black font-extrabold  mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt="" class="inline"><?php echo htmlspecialchars($price); ?> </p>
+
             <form action="cart.php" method="POST" >
               <input type="hidden" name="removeCartId" value="<?php echo htmlspecialchars($cartId); ?>">
               <button type="submit" name="removeFromCart" class="border rounded-xl p-2 text-2xl text-white"><img src="./productimages/icons8-trash-24.png"  alt="" class="w-['50px']"></button>
@@ -101,7 +103,7 @@ include('./partials/header.php');
 
   </ul>
 
-  <button type="submit" name="removeFromCart" class="border rounded-xl p-2 text-2xl text-white bg-project-bg-2 my-5 "><a href="order.php?orderId=<?php echo htmlspecialchars($cartId) ?>">Order Here</a></button>
+  <button type="submit" class=" rounded-xl p-2 text-2xl text-white bg-project-bg-2 my-5 "><a href="order.php?orderId=<?php echo htmlspecialchars($cartId) ?>">Order Here</a></button>
 
 </div>
 
