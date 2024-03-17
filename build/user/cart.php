@@ -115,8 +115,7 @@ if (isset($_POST['removeFromCart']) && isset($_POST['removeCartId'])) {
   // Call the removeFromCart function with the product ID to remove it from the cart
   removeFromCart($_POST['removeCartId']);
   // Redirect to the cart page to refresh the displayed items
-  header("Location: cart.php");
-  exit;
+  
 }
 ?>
 
