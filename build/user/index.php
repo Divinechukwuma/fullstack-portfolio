@@ -101,7 +101,7 @@
     </div>
   </section>
 
-  <div class="bg-font-color w-[80%] my-10 mx-auto " id="products">
+  <div class=" bg-font-color-hover w-[80%] my-10 mx-auto " id="products">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">Available for sale</h1>
     <ul class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4">
 
@@ -122,7 +122,7 @@
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
+          <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px] bg-font-color">
             <p class="text-unique-black font-extrabold  mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt="" class="inline"><?php echo htmlspecialchars($price) ?>
           </p>
             <div>

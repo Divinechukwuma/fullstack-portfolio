@@ -4,8 +4,8 @@ include('./partials/header.php');
 
 ?>
 
-<div class="bg-font-color w-[80%] my-10 mx-auto ">
-  <h1 class="font-sans text-3xl font-bold  text-black p-1">🛒 Cart</h1>
+<div class="bg-font-color-hover w-[80%] my-10 mx-auto ">
+  <h1 class="font-sans text-3xl font-bold  text-black p-1 text-center">🛒 Cart</h1>
   <ul class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4">
 
     <?php
@@ -61,7 +61,7 @@ include('./partials/header.php');
           $title = $row['title'];
           $description = $row['description'];
     ?>
-          <li class="= py-2 px-7 rounded-3xl shadow-xl w-[300px]  my-5 lg:[400px]">
+         <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px] bg-font-color">
             <p class="text-unique-black font-extrabold  mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt="" class="inline"><?php echo htmlspecialchars($price); ?> </p>
             <form action="cart.php" method="POST" >
               <input type="hidden" name="removeCartId" value="<?php echo htmlspecialchars($cartId); ?>">
@@ -87,7 +87,7 @@ include('./partials/header.php');
               <?php echo htmlspecialchars($description); ?>
             </p>
            
-              <button type="submit" name="removeFromCart" class="border rounded-xl my-2 p-2 text-2xl text-white bg-project-bg-2"><a href="order.php?orderId=<?php echo htmlspecialchars($cartId) ?>">Order Here</a></button>
+              
           </li>
     <?php
         }
@@ -100,6 +100,9 @@ include('./partials/header.php');
     ?>
 
   </ul>
+
+  <button type="submit" name="removeFromCart" class="border rounded-xl p-2 text-2xl text-white bg-project-bg-2 my-5 "><a href="order.php?orderId=<?php echo htmlspecialchars($cartId) ?>">Order Here</a></button>
+
 </div>
 
 
@@ -115,7 +118,7 @@ if (isset($_POST['removeFromCart']) && isset($_POST['removeCartId'])) {
 }
 ?>
 
-<div class="bg-font-color w-[80%] my-10 mx-auto ">
+<div class="bg-font-color-hover w-[80%] my-10 mx-auto ">
     <h1 class="font-sans text-3xl font-bold text-center text-black p-1">On sale</h1>
     <ul class="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-4">
 
@@ -136,7 +139,7 @@ if (isset($_POST['removeFromCart']) && isset($_POST['removeCartId'])) {
           $imageName = $row['imageName']; // Fixed variable name
           $categoryId = $row['categoryId'];
       ?>
-          <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px]">
+          <li class=" py-2 px-7 rounded-3xl shadow-xl w-[230px] mx-auto my-5 lg:[400px] bg-font-color">
             <p class="text-unique-black font-extrabold  mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt="" class="inline"><?php echo htmlspecialchars($price) ?>
           </p>
             <div>
