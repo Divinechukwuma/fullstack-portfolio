@@ -2,7 +2,7 @@
 
 <section class="w-[80%] my-10 mx-auto" >
 
-  <form action="products-search.php" class="bg-unique-black md:md:block w-full font-sans text-center text-black p-5 ">
+  <form action="#" class="bg-unique-black md:md:block w-full font-sans text-center text-black p-5 ">
     <input class=" bg-white p-3 rounded pl-10 w-[60%]" type="text" placeholder="Search For Products">
     <input class="bg-project-bg-2 p-3 rounded ml-2 text-white" type="submit" value="Search" >
   </form>
