@@ -72,7 +72,7 @@ include('./partials/header.php');
 
             <div>
               <?php
-              $imagePath = "../admin/images/goods" . $row['imageName'];
+              $imagePath = "./admin/images/goods" . $row['imageName'];
               if ($row['imageName'] == "" || !file_exists($imagePath)) {
                 echo "Image not available";
               } else {
@@ -150,7 +150,7 @@ if (isset($_POST['removeFromCart']) && isset($_POST['removeCartId'])) {
               echo "Image not available";
             } else {
               // Image available
-              $imagePath = "../admin/images/goods" . $imageName;
+              $imagePath = "./admin/images/goods" . $imageName;
 
               if (file_exists($imagePath)) {
             ?>

@@ -37,7 +37,7 @@
             echo "Image not found";
           } else {
             // Image available
-            $imagePath = "../admin/images/goods" . $imageName;
+            $imagePath = "./admin/images/goods" . $imageName;
 
             if (file_exists($imagePath)) {
           ?>

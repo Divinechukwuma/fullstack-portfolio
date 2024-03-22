@@ -42,7 +42,7 @@ include('./partials/header.php');
                     <p class="text-unique-black font-extrabold mb-5 text-xl"> <img src="./productimages/icons8-naira-24.png" alt="" class="inline"><?php echo htmlspecialchars($row['price']); ?></p>
                     <div>
                         <?php
-                        $imagePath = "../admin/images/goods" . $row['imageName'];
+                        $imagePath = "./admin/images/goods" . $row['imageName'];
                         if ($row['imageName'] == "" || !file_exists($imagePath)) {
                             echo "Image not available";
                         } else {
