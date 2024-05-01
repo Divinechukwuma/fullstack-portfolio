@@ -1,4 +1,14 @@
-<?php  include '../admin/partials/header.php'; ?>
+<?php 
+
+echo "<pre>";
+
+    var_dump($_SERVER);
+
+    echo "</pre>";
+
+    die();
+
+include '../admin/partials/header.php'; ?>
     <main class="md:max-w-8xl mx-auto ">
           <ul class="list-none flex md:py-20 py-10 flex-wrap md:ml-40 ml-5">
            <li class="text-3xl  bg-project-bg-2 p-12 text-font-color md:m-10 m-1">Dashboared</li>
