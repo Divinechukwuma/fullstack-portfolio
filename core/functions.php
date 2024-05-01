@@ -1,7 +1,5 @@
 <?php
 
-namespace core;
-
 function dd($value)
 {
     echo "<pre>";
