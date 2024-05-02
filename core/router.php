@@ -1,19 +1,18 @@
 <?php
 
-namespace core;
+namespace Core;
 
 class Router
 {
 
-    protected  $routes = [];
+    protected $routes = [];
 
     public function add($method, $uri, $controller)
     {
-
         $this->routes[] = [
             'uri' => $uri,
-            'controller' =>  $controller,
-            'method' => $method
+            'controller' => $controller,
+            'method' => $method,
         ];
 
         return $this;
@@ -44,7 +43,19 @@ class Router
         return $this->add('PUT', $uri, $controller);
     }
 
-    protected function abort($code = 404) {
+    public function route($uri, $method)
+    {
+        foreach ($this->routes as $route) {
+            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+                return require $route['controller'];
+            }
+        }
+
+        $this->abort();
+    }
+
+    protected function abort($code = 404)
+    {
         http_response_code($code);
         require 'controllers/404.php';
 
