@@ -1,6 +1,6 @@
 <?php
-
-require "view/landingpage/create.view.php";
+require base_path('config/database.php');
+require view("landingpage/create.view.php");
 
 // Sql query to fetch data from database
 

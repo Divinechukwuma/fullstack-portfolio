@@ -1,5 +1,4 @@
 <?php
- session_start();//this will start our session on multiple pages
 
   //this is a way to write manageable code 
     //create constants to store non repeating values

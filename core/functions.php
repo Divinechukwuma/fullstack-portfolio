@@ -12,12 +12,11 @@ function dd($value)
 
 function base_path($path)
 {
-    
-    return BASE_PATH . $path;
 
+    return BASE_PATH . $path;
 }
 
-function view()
+function view($path)
 {
-    
+    return base_path('view/' . $path);
 }
