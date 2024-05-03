@@ -1,12 +1,5 @@
 <?php 
 
-echo "<pre>";
-
-    var_dump($_SERVER);
-
-    echo "</pre>";
-
-    die();
 
 include '../admin/partials/header.php'; ?>
     <main class="md:max-w-8xl mx-auto ">
