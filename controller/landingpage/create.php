@@ -1,5 +1,7 @@
 <?php
 
+require "view/landingpage/create.view.php";
+
 // Sql query to fetch data from database
 
 $sql = "SELECT * FROM tbl_category LIMIT 6";

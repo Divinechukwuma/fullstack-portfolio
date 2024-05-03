@@ -1,7 +1,8 @@
 <?php
-session_start();
+// session_start();
+const BASE_PATH = __DIR__ . '/./';
 require 'core/functions.php';
-use Core\Router;
+require  'Core/Router.php';
 
 $router = new Router;
 
@@ -11,4 +12,3 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
 $router->route($uri, $method);
-

@@ -1,4 +1,4 @@
-<?php include('./partials/header.php') ?>
+<?php require base_path('view/partials/header.php') ?>
 
 <section class="w-[80%] my-10 mx-auto" >
 

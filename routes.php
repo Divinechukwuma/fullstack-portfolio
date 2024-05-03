@@ -1,3 +1,3 @@
 <?php
 
-$route->get("/webapps/fullstack-portfolio/","controller/index.php");
+$router->get("/webapps/fullstack-portfolio/","controller/landingpage/create.php");
