@@ -1,4 +1,3 @@
-<?php require base_path('config/database.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
