@@ -2,9 +2,9 @@
 return [
     'database' => [
         'host' => 'localhost',
-        'db_name' => 'divine-store',
+        'dbname' => 'divine-store',
         'username' => 'divine-store',
-        'db-password' => 'CHUKS989'
+        'dbpassword' => 'CHUKS989'
     ],
 
     // any other config things

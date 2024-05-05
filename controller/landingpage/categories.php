@@ -2,6 +2,7 @@
 $config = require base_path('config.php');
 $db = new Database($config['database']);
 
+dd($db);
 
  $sql = $db->query( "SELECT * FROM tbl_category WHERE id = :id, title = :title, imageName = :imageName  LIMIT 6",[
     'id' => $_GET['id'] ,

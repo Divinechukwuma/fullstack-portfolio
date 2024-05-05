@@ -3,7 +3,7 @@
 const BASE_PATH = __DIR__ . '/./';
 require 'core/functions.php';
 require  'Core/Router.php';
-require 'core/database.php';
+require 'core/Database.php';
 
 $router = new Router;
 
