@@ -1,8 +1,5 @@
 <?php
 
-$config = require base_path('config.php');
-$db = new Database($config['database']);
-
 $sql = $db->query("SELECT * FROM tbl_products  WHERE id = :id, title = :title, description = :description, price = :price, imageName = :imageName, categoryId  = :categoryId   ORDER BY imageName DESC",[
 
   'id' => $_GET['id'],
