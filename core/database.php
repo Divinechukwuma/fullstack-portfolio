@@ -3,8 +3,8 @@
 // connect to our MYSQL database and execute a query.
 class Database
 {
-    protected $conn;
-    protected $statement;
+    private $conn;
+    private $statement;
 
     //this part of the code is correct dont touch it again 
     public function __construct($config, $username = 'divine-store', $password = 'CHUKS989')
@@ -23,11 +23,7 @@ class Database
         }
     }
 
-    public function getConn()
-    {
-        return $this->conn;
-    }
-
+    
      public function query($sql, $params = [])
      {
          try {
@@ -41,10 +37,7 @@ class Database
          }
      }
 
-     public function statement(){
-        return $this->statement;
-    }
-
+     
     public function get()
     {
         try {

@@ -7,10 +7,10 @@ $db = new Database($config['database']);
 
 // Prepare SQL query
 $stmt = $db->query("SELECT * FROM tbl_category WHERE id = :id AND title = :title AND imageName = :imageName LIMIT 6", [
-    'id' => htmlspecialchars($_GET['id']),
-    'title' => htmlspecialchars($_GET['title']),
-    'imageName' => htmlspecialchars($_GET['imageName'])
-])->get();
+    'id' => $_GET['id'],
+    'title' => $_GET['title'],
+    'imageName' => $_GET['imageName']
+])->findOrFail();
 
 
 
